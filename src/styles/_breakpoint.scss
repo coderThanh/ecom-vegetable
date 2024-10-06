@@ -1,0 +1,29 @@
+// Do not inclue in file source
+// This just varibale file
+// Example to use:
+// b1. @use '@/styles/_breakpoint' as _bp;
+// b2. #{_bp.$max-w-md}
+
+// Responsive Variables for bootstrap
+$x4l: 'only screen and (min-width: 1700px) and (max-width: 1800px)';
+$x3l: 'only screen and (min-width: 1600px) and (max-width: 1700px)';
+$xxl: 'only screen and (min-width: 1400px) and (max-width: 1599px)';
+$xl: 'only screen and (min-width: 1200px) and (max-width: 1399px)';
+$lg: 'only screen and (min-width: 992px) and (max-width: 1199px)';
+$md: 'only screen and (min-width: 768px) and (max-width: 1023px)';
+$sm: 'only screen and (min-width: 576px) and (max-width: 767px)';
+$xs: '(max-width: 639px)';
+
+// responsive variable for wordpress admin bar
+$wp-sm: '@media (max-width: 782px)';
+$wp-xs: '@media (max-width: 600px)';
+
+// responsive for tailwind
+$max-w-lg: 'only screen and (max-width: 1279px)';
+$max-w-md: 'only screen and (max-width: 1023px)';
+$max-w-sm: 'only screen and (max-width: 767px)';
+$max-w-xs: 'only screen and (max-width: 639px)';
+
+$min-w-lg: 'only screen and (min-width: 1024px)';
+$min-w-md: 'only screen and (min-width: 768px)';
+$min-w-sm: 'only screen and (min-width: 640px)';
