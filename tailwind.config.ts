@@ -11,6 +11,14 @@ const config: Config = {
       container: {
         center: true,
       },
+      colors: {
+        'primary': 'rgb(var(--color-primary))',
+        'seconday': 'rgb(var(--color-seconday))',
+        'alert': 'rgb(var(--color-alert))',
+        'success': 'rgb(var(--color-success))',
+        'process': 'rgb(var(--color-process))',
+        'warning': 'rgb(var(--color-warning))',
+      },
       fontSize: {
         'size-small': 'var(--size-small)',
         'size-small-a': 'var(--size-small-a)',

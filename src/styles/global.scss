@@ -1,10 +1,12 @@
 @use '@/styles/_breakpoint' as _bp;
 
 :root {
-    --color-primary: 20, 170, 94;
+    --color-primary: 61, 170, 129;
     --color-secondary: 29, 161, 242;
     --color-alert: 236, 69, 60;
     --color-success: 74, 159, 83;
+    --color-process: 63, 162, 246;
+    --color-warning: 255, 175, 0;
     --color-border: 33, 35, 34;
     --color-border-opposite: 255, 255, 255;
     --bg: 255, 255, 255;
@@ -43,11 +45,54 @@
     font-size: 16px;
 }
 
+body {
+    color: rgb(var(--color-text-title));
+}
+
 p {
     margin-bottom: 14px;
     line-height: 1.6;
 }
 
+
+
+.line-clamp-1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.line-clamp-2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.line-clamp-3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+// Field
+.field-text-rest {
+    background-color: transparent;
+    font-size: 16px;
+    outline: none;
+
+    &::placeholder {
+        font-size: 1rem;
+    }
+}
 
 // Loading
 .sketch-loading {
