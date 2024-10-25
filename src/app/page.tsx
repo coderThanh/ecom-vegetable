@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { Metadata } from 'next'
 import { PAGE_DESCRIPTION } from '@/ultil/const'
 import { Wrapper } from '@/app/(components)/wrapper'

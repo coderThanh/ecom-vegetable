@@ -28,6 +28,28 @@ export const DATA_MENU_MAIN: MenuItem[] = [
   {
     url: '/',
     text: 'Home',
+    chilren: [
+      {
+        url: '#',
+        text: 'Mango Juice',
+      },
+      {
+        url: '#',
+        text: 'Coconut Water',
+      },
+      {
+        url: '#',
+        text: 'Tetra Pack',
+      },
+      {
+        url: '#',
+        text: 'Apple Juices',
+      },
+      {
+        url: '#',
+        text: 'Lychee Juice',
+      },
+    ],
   },
   {
     url: '#',

@@ -87,7 +87,7 @@ p {
 .field-text-rest {
     background-color: transparent;
     font-size: 16px;
-    outline: none;
+    width: 100%;
 
     &::placeholder {
         font-size: 1rem;

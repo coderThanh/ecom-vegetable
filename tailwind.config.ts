@@ -18,6 +18,7 @@ const config: Config = {
         'success': 'rgb(var(--color-success))',
         'process': 'rgb(var(--color-process))',
         'warning': 'rgb(var(--color-warning))',
+        'title': 'rgb(var(--color-text-title))',
       },
       fontSize: {
         'size-small': 'var(--size-small)',

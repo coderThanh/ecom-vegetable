@@ -5,10 +5,10 @@ import SvgHeart from '@/app/(svg)/heart'
 export const HeaderCenterCTA = () => {
   return (
     <>
-      <div className="flex flex-wrap gap-x-[24px] gap-y-[12px]">
+      <div className="flex flex-wrap gap-x-[12px] md:gap-x-[24px] gap-y-[12px]">
         <div className="group  flex items-center gap-[6px] cursor-pointer ">
           <div className="relative">
-            <SvgAccount className="group-hover:text-primary duration-200" />
+            <SvgAccount className="group-hover:text-primary duration-200 w-[26px] h-[26px] md:w-[30px] md:h-[30px]" />
           </div>
           <div className="lg:block hidden">
             <div className="text-size-small-a mb-[5px] line-clamp-1 text-[rgb(var(--color-text-title),0.6)] font-semibold duration-200 group-hover:text-primary">
@@ -21,7 +21,7 @@ export const HeaderCenterCTA = () => {
         </div>
         <div className="group  flex items-center gap-[6px] cursor-pointer ">
           <div className="relative">
-            <SvgHeart className="group-hover:text-primary duration-200" />
+            <SvgHeart className="group-hover:text-primary duration-200 w-[26px] h-[26px] md:w-[30px] md:h-[30px]" />
             <div className="lg:hidden absolute top-[-6px] right-[-6px] w-[18px] h-[18px] rounded-full bg-[rgb(var(--bg-opposite))] text-[rgb(var(--bg))] flex items-center justify-center leading-none text-[10px] font-semibold text-center">
               3
             </div>
@@ -37,7 +37,7 @@ export const HeaderCenterCTA = () => {
         </div>
         <div className="group  flex items-center gap-[6px] cursor-pointer ">
           <div className="relative">
-            <SvgBag className="group-hover:text-primary duration-200" />
+            <SvgBag className="group-hover:text-primary duration-200 w-[26px] h-[26px] md:w-[30px] md:h-[30px]" />
             <div className="lg:hidden absolute top-[-6px] right-[-6px] w-[18px] h-[18px] rounded-full bg-[rgb(var(--bg-opposite))] text-[rgb(var(--bg))] flex items-center justify-center leading-none text-[10px] font-semibold text-center">
               3
             </div>

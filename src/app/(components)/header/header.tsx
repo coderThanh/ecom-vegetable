@@ -1,3 +1,5 @@
+import { AsideMenu } from '@/app/(components)/header/aside-menu'
+import { ButtonAsideMenu } from '@/app/(components)/header/button-aside-menu'
 import { DATA_MENU_MAIN } from '@/ultil/const'
 import { HeaderCenterCTA } from '@/app/(components)/header/center-cta'
 import { HeaderMenuVertical } from '@/app/(components)/header/menu-vertical'
@@ -19,6 +21,7 @@ export const Header = () => {
       <HeaderTop />
       <HeaderCenter />
       <HeaderBottom />
+      <AsideMenu />
     </header>
   )
 }
@@ -33,11 +36,11 @@ export const Header = () => {
  */
 const HeaderTop = () => {
   return (
-    <div className={`bg-[rgb(var(--bg-2nd))] py-[10px] px-[12px]`}>
+    <div className={`bg-[rgb(var(--bg-2nd))] py-[10px] px-[12px] `}>
       <div
         className={`container text-size-small flex gap-x-[15px] text-[rgb(var(--color-text-sub))] items-center`}
       >
-        <div className="flex flex-1 gap-x-[15px]">
+        <div className="hidden sm:flex flex-1 gap-x-[15px]">
           <Link
             href={'#'}
             className="flex gap-x-[5px] items-center  hover:text-[rgb(var(--color-primary))] duration-300 transition-all"
@@ -53,13 +56,24 @@ const HeaderTop = () => {
             +91 987 654 3210
           </Link>
         </div>
+        {/* ---- */}
         <div className="flex-1 hidden lg:block">
           <div className="text-center">
             World's Fastest Online Shopping Destination
           </div>
         </div>
-        <div className="flex-1">
+        {/* ---- */}
+        <div className="flex-1 hidden lg:flex justify-end">
           <MenuTop />
+        </div>
+        {/* Mobile -----*/}
+        <div className="flex lg:hidden gap-[12px] justify-between flex-1 sm:justify-end">
+          <div className="order-2">
+            <HeaderCenterCTA />
+          </div>
+          <div className="order-1 sm:order-3">
+            <ButtonAsideMenu />
+          </div>
         </div>
       </div>
     </div>
@@ -69,10 +83,13 @@ const HeaderTop = () => {
 const HeaderCenter = () => {
   return (
     <>
-      <div>
+      <div className="border-b border-solid border-[rgba(var(--color-border),0.1)]">
         <div className="container px-[12px]">
-          <div className="flex items-center py-[30px]">
-            <Link href={'/'}>
+          <div className="flex items-center py-[20px] md:py-[30px]">
+            <Link
+              href={'/'}
+              className="basis-[120px] block"
+            >
               <Image
                 src={'/assets/logo.png'}
                 alt={'logo'}
@@ -81,10 +98,10 @@ const HeaderCenter = () => {
                 objectFit="contain"
               />
             </Link>
-            <div className="flex-1 px-[40px]">
+            <div className="flex-1 lg:px-[40px] ps-[30px]">
               <HeaderSearch />
             </div>
-            <div className="flex">
+            <div className=" hidden lg:block">
               <HeaderCenterCTA />
             </div>
           </div>
@@ -96,7 +113,7 @@ const HeaderCenter = () => {
 
 const HeaderBottom = () => {
   return (
-    <div className="border-t border-b border-solid border-[rgba(var(--color-border),0.1)] py-[6px] px-[12px]">
+    <div className=" border-b border-solid border-[rgba(var(--color-border),0.1)] py-[6px] px-[12px] hidden lg:block">
       <div className="container">
         <div className="flex items-center">
           <div>
