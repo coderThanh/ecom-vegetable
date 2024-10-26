@@ -7,8 +7,7 @@ import { DATA_MENU_MAIN } from '@/ultil/const'
 import Image from 'next/image'
 import Link from 'next/link'
 import { RootState } from '@/redux/store'
-import SvgArrowDown from '@/app/(svg)/arrow-down'
-import SvgArrowRight from '@/app/(svg)/arrow-right'
+import { Socials } from '@/app/(components)/social/social'
 import SvgClose from '@/app/(svg)/close'
 import SvgMinus from '@/app/(svg)/minus'
 import SvgPlus from '@/app/(svg)/plus'
@@ -46,6 +45,7 @@ export const AsideMenu = () => {
         </div>
         {/* --- Main --- */}
         <AsideMenuMain />
+        <Socials  facebook='#' x='#' instagram='#' linked='#' className='mt-[50px]'/>
       </div>
       <div
         className={styles.bg}

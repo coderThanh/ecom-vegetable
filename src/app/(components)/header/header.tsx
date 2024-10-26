@@ -36,9 +36,9 @@ export const Header = () => {
  */
 const HeaderTop = () => {
   return (
-    <div className={`bg-[rgb(var(--bg-2nd))] py-[10px] px-[12px] `}>
+    <div className={`bg-[rgb(var(--bg-2nd))] py-[10px]  `}>
       <div
-        className={`container text-size-small flex gap-x-[15px] text-[rgb(var(--color-text-sub))] items-center`}
+        className={`container text-size-small px-[12px] flex gap-x-[15px] text-[rgb(var(--color-text-sub))] items-center`}
       >
         <div className="hidden sm:flex flex-1 gap-x-[15px]">
           <Link
@@ -95,7 +95,7 @@ const HeaderCenter = () => {
                 alt={'logo'}
                 width={144}
                 height={39}
-                objectFit="contain"
+                className='object-contain'
               />
             </Link>
             <div className="flex-1 lg:px-[40px] ps-[30px]">
@@ -113,8 +113,8 @@ const HeaderCenter = () => {
 
 const HeaderBottom = () => {
   return (
-    <div className=" border-b border-solid border-[rgba(var(--color-border),0.1)] py-[6px] px-[12px] hidden lg:block">
-      <div className="container">
+    <div className=" border-b border-solid border-[rgba(var(--color-border),0.1)] py-[6px]  hidden lg:block">
+      <div className="container px-[12px]">
         <div className="flex items-center">
           <div>
             <HeaderMenuVertical />

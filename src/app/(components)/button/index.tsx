@@ -1,10 +1,11 @@
 'use client'
-import classNames from 'classnames'
 
-import styles from './button.module.scss'
-import { MouseEventHandler, ReactElement } from 'react'
-import SystemLink from '@/app/(components)/link/index'
+import { HTMLAttributeAnchorTarget, MouseEventHandler, ReactElement } from 'react'
+
 import React from 'react'
+import SystemLink from '@/app/(components)/link/index'
+import classNames from 'classnames'
+import styles from './button.module.scss'
 
 export enum SystemButtonKind {
   text = 'text',
@@ -34,6 +35,7 @@ export type SystemButtonProps = {
   kind?: SystemButtonKind
   color?: SystemButtonColor
   url?: string
+  target?: HTMLAttributeAnchorTarget
   className?: string
   text?: string
   size?: SystemButtonSize
@@ -56,6 +58,8 @@ export default function SystemButton(props: SystemButtonProps) {
           styles[props.size || ''],
         )}
         url={props.url as any}
+        target={props?.target}
+        {...props}
       >
         <div
           className={classNames('btn-inner', styles.inner, {

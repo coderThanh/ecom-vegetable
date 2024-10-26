@@ -86,6 +86,15 @@
             --btn-border: unset;
             --btn-border-hover: unset;
         }
+   
+        &.dark {
+            --btn-text: rgb(var(--bg));
+            --btn-text-hover: rgb(var(--bg));
+            --btn-bg: rgb(var(--bg-opposite));
+            --btn-bg-hover: rgb(var(--color-primary));
+            --btn-border: unset;
+            --btn-border-hover: unset;
+        }
     }
 
     &.outline {
