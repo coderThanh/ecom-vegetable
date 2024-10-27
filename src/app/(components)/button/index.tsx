@@ -59,7 +59,6 @@ export default function SystemButton(props: SystemButtonProps) {
         )}
         url={props.url as any}
         target={props?.target}
-        {...props}
       >
         <div
           className={classNames('btn-inner', styles.inner, {

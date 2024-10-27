@@ -83,7 +83,7 @@ const AsideMenuMain = () => {
                               <SystemLink
                                 key={`aside-item-lv3-${index}`}
                                 url={childSub?.url}
-                                className="text-[rgb(var(--color-text-title),0.7)] hover:text-primary"
+                                className="text-[rgb(var(--color-text-title),0.85)] hover:text-primary"
                               >
                                 {childSub.text}
                               </SystemLink>
@@ -158,7 +158,7 @@ const AsideMenuItemLv2 = (props: AsideMenuItemProps) => {
         </SystemLink>
         {props?.children && (
           <div
-            className="absolute right-0 top-[50%] translate-y-[-50%] cursor-pointer w-[34px] h-[34px] flex justify-center items-center text-[rgb(var(--color-text-title),0.7)] hover:text-primary transition-colors duration-200"
+            className="absolute right-0 top-[50%] translate-y-[-50%] cursor-pointer w-[34px] h-[34px] flex justify-center items-center text-[rgb(var(--color-text-title),0.8)] hover:text-primary transition-colors duration-200"
             onClick={() => setIsShowSub(!isShowSub)}
           >
             {isShowSub ? (

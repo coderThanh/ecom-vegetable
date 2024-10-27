@@ -11,9 +11,9 @@
     --color-border-opposite: 255, 255, 255;
     --bg: 255, 255, 255;
     --bg-2nd: 248, 248, 251;
-    --bg-opposite: 33, 34, 38;
+    --bg-opposite: 75, 89, 102;
     --color-text-sub: 119, 119, 119;
-    --color-text-title: 33, 35, 34;
+    --color-text-title: 75, 89, 102;
 
     --ff-material-outline: 'Material Symbols Outlined';
     --ff-material-round: 'Material Symbols Rounded';
@@ -42,19 +42,19 @@
     --sketch-loading-bg-size: 200% 100%;
     --sketch-loading-animetion: 1.5s sketchloading linear infinite;
 
+
     font-size: 16px;
 }
 
 body {
     color: rgb(var(--color-text-title));
+
 }
 
 p {
     margin-bottom: 14px;
     line-height: 1.6;
 }
-
-
 
 .line-clamp-1 {
     overflow: hidden;
@@ -82,6 +82,34 @@ p {
     line-clamp: 3;
     -webkit-box-orient: vertical;
 }
+
+// Swiper
+.swiper {
+    --swiper-pagination-bullet-inactive-color: rgb(var(--bg-opposite));
+    --swiper-pagination-color: rgb(var(--bg-opposite));
+    --swiper-theme-color: rgb(var(--color-primary));
+    --swiper-pagination-bottom: 14px;
+
+    &.swiper-dot-big {
+        --swiper-pagination-bullet-horizontal-gap: 2px;
+        .swiper-pagination-bullet {
+            background-color: transparent;
+            border: 1px solid var(--swiper-pagination-color);
+            width: 14px;
+            height: 14px;
+            opacity: 1;
+            border-radius: 100px;
+
+
+            &.swiper-pagination-bullet-active {
+                width: 28px;
+                background-color: var(--swiper-pagination-color);
+            }
+        }
+    }
+}
+
+
 
 // Field
 .field-text-rest {

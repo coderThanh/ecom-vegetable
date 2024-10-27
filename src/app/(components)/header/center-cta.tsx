@@ -11,10 +11,10 @@ export const HeaderCenterCTA = () => {
             <SvgAccount className="group-hover:text-primary duration-200 w-[26px] h-[26px] md:w-[30px] md:h-[30px]" />
           </div>
           <div className="lg:block hidden">
-            <div className="text-size-small-a mb-[5px] line-clamp-1 text-[rgb(var(--color-text-title),0.6)] font-semibold duration-200 group-hover:text-primary">
+            <div className="text-size-small-a mb-[5px] line-clamp-1 text-[rgb(var(--color-text-title),0.8)] font-semibold duration-200 group-hover:text-primary">
               Account
             </div>
-            <div className="text-size-small line-clamp-1 uppercase font-medium">
+            <div className="text-size-small line-clamp-1 uppercase font-semibold">
               Login
             </div>
           </div>
@@ -27,10 +27,10 @@ export const HeaderCenterCTA = () => {
             </div>
           </div>
           <div className="lg:block hidden">
-            <div className="text-size-small-a mb-[5px] line-clamp-1 text-[rgb(var(--color-text-title),0.6)] font-semibold duration-200 group-hover:text-primary">
+            <div className="text-size-small-a mb-[5px] line-clamp-1 text-[rgb(var(--color-text-title),0.8)] font-semibold duration-200 group-hover:text-primary">
               Wishlist
             </div>
-            <div className="text-size-small line-clamp-1 uppercase font-medium">
+            <div className="text-size-small line-clamp-1 uppercase font-semibold">
               3-ITEMS
             </div>
           </div>
@@ -43,10 +43,10 @@ export const HeaderCenterCTA = () => {
             </div>
           </div>
           <div className="lg:block hidden">
-            <div className="text-size-small-a mb-[5px] line-clamp-1 text-[rgb(var(--color-text-title),0.6)] font-semibold duration-200 group-hover:text-primary">
+            <div className="text-size-small-a mb-[5px] line-clamp-1 text-[rgb(var(--color-text-title),0.8)] font-semibold duration-200 group-hover:text-primary">
               Cart
             </div>
-            <div className="text-size-small line-clamp-1 uppercase font-medium">
+            <div className="text-size-small line-clamp-1 uppercase font-semibold">
               3-ITEMS
             </div>
           </div>
