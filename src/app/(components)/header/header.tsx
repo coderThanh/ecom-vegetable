@@ -1,6 +1,6 @@
 import { AsideMenu } from '@/app/(components)/header/aside-menu'
 import { ButtonAsideMenu } from '@/app/(components)/header/button-aside-menu'
-import { DATA_MENU_MAIN } from '@/ultil/const'
+import { DATA_MENU_MAIN } from '@/ultil/data'
 import { HeaderCenterCTA } from '@/app/(components)/header/center-cta'
 import { HeaderMenuVertical } from '@/app/(components)/header/menu-vertical'
 import { HeaderSearch } from '@/app/(components)/header/search'

@@ -3,7 +3,7 @@
 import { ReactNode, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { DATA_MENU_MAIN } from '@/ultil/const'
+import { DATA_MENU_MAIN } from '@/ultil/data'
 import Image from 'next/image'
 import Link from 'next/link'
 import { RootState } from '@/redux/store'
