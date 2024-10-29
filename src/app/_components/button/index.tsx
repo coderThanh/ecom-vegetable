@@ -3,7 +3,7 @@
 import { HTMLAttributeAnchorTarget, MouseEventHandler, ReactElement } from 'react'
 
 import React from 'react'
-import SystemLink from '@/app/(components)/link/index'
+import SystemLink from '@/app/_components/link/index'
 import classNames from 'classnames'
 import styles from './button.module.scss'
 

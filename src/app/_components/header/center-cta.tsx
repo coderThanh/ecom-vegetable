@@ -1,6 +1,6 @@
-import SvgAccount from '@/app/(svg)/account'
-import SvgBag from '@/app/(svg)/bag'
-import SvgHeart from '@/app/(svg)/heart'
+import SvgAccount from '@/app/_svg/account'
+import SvgBag from '@/app/_svg/bag'
+import SvgHeart from '@/app/_svg/heart'
 
 export const HeaderCenterCTA = () => {
   return (

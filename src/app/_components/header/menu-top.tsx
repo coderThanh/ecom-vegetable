@@ -2,7 +2,7 @@
 
 import React, { useCallback, useEffect, useState } from 'react'
 
-import SystemLink from '@/app/(components)/link'
+import SystemLink from '@/app/_components/link'
 import styles from './header.module.scss'
 
 export const MenuTop = () => {

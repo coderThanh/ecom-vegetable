@@ -1,6 +1,7 @@
+import { DATE_FORMAT_VI, LOCALE, TOKEN } from '@/ultil/const'
 
-import { DATE_FORMAT_VI, TOKEN } from '@/ultil/const'
 import dayjs from 'dayjs'
+import utc from 'dayjs/plugin/utc'
 
 //  --------
 export const isConnectAPI = () =>
@@ -340,4 +341,10 @@ export const parseAddressName = (
   list = list.filter((item) => item)
 
   return list.join(', ')
+}
+
+//
+export const dayjsUTCLocal = (time: Date, locale = LOCALE ) => {
+  dayjs.extend(utc)
+  return dayjs(time).utc().locale(locale)
 }

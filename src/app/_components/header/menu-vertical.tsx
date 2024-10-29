@@ -1,11 +1,11 @@
 'use client'
 
 import Link from 'next/link'
-import SvgArrowDown from '@/app/(svg)/arrow-down'
-import SvgCategory from '@/app/(svg)/category'
-import SvgDessert_1 from '@/app/(svg)/dessert-1'
-import SvgDessert_2 from '@/app/(svg)/dessert-2'
-import SvgDessert_3 from '@/app/(svg)/dessert-3'
+import SvgArrowDown from '@/app/_svg/arrow-down'
+import SvgCategory from '@/app/_svg/category'
+import SvgDessert_1 from '@/app/_svg/dessert-1'
+import SvgDessert_2 from '@/app/_svg/dessert-2'
+import SvgDessert_3 from '@/app/_svg/dessert-3'
 import styles from './header.module.scss'
 import { useState } from 'react'
 

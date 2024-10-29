@@ -1,8 +1,8 @@
 import Link from 'next/link'
-import SvgSocialFacebook from '@/app/(svg)/social-facebook'
-import SvgSocialInstagram from '@/app/(svg)/social-instagram'
-import SvgSocialLinked from '@/app/(svg)/social-linked'
-import SvgSocialX from '@/app/(svg)/social-x'
+import SvgSocialFacebook from '@/app/_svg/social-facebook'
+import SvgSocialInstagram from '@/app/_svg/social-instagram'
+import SvgSocialLinked from '@/app/_svg/social-linked'
+import SvgSocialX from '@/app/_svg/social-x'
 
 type SocialsProps = {
   className?: string

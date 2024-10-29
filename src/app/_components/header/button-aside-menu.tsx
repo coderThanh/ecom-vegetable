@@ -1,6 +1,6 @@
 'use client'
 
-import SvgMenu from '@/app/(svg)/menu'
+import SvgMenu from '@/app/_svg/menu'
 import { toggleAside } from '@/redux/feature/menu-aside'
 import { useDispatch } from 'react-redux'
 

@@ -19,6 +19,9 @@ const config: Config = {
         'process': 'rgb(var(--color-process))',
         'warning': 'rgb(var(--color-warning))',
         'title': 'rgb(var(--color-text-title))',
+        'bg': 'rgb(var(--bg))',
+        'bg-2nd': 'rgb(var(--bg-2nd))',
+        'bg-opposite': 'rgb(var(--bg-opposite))',
       },
       fontSize: {
         'size-small': 'var(--size-small)',

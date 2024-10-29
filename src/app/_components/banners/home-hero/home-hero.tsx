@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import SystemButton, {
   SystemButtonColor,
   SystemButtonKind,
-} from '@/app/(components)/button'
+} from '@/app/_components/button'
 
 import Image from 'next/image'
 

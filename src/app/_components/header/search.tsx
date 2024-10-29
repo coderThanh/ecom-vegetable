@@ -1,4 +1,4 @@
-import SvgSearch from '@/app/(svg)/search'
+import SvgSearch from '@/app/_svg/search'
 
 export const HeaderSearch = () => {
   return (
