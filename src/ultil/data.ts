@@ -156,7 +156,7 @@ export const DATA_PRODUCTS: Product[] = [
     title: 'Rustic Rubber Mouse',
     rating: 3,
     price: 20755743,
-    priceSale: 2155743,
+    priceSale: undefined,
   },
 
   {

@@ -7,7 +7,6 @@ import { Rating } from '@/app/_components/rating/rating'
 import SvgBag from '@/app/_svg/bag'
 import SvgHeart from '@/app/_svg/heart'
 import SystemLink from '@/app/_components/link'
-import { getRandomInt } from '@/ultil/helper'
 import { notifySuccess } from '@/ultil/toast'
 
 type ProductItemProps = {
@@ -77,7 +76,7 @@ export const ProductItem = (props: ProductItemProps) => {
             url={CONST_ROUTER.shop}
             className="line-clamp-1 duration-200 transition-colors hover:text-primary text-[rgb(var(--color-text-title),0.8)] text-size-small mb-[8px]"
           >
-            {DATA_PRODUCT_CATEGORY[props?.index].name}
+            {DATA_PRODUCT_CATEGORY[Math.min(props?.index, DATA_PRODUCT_CATEGORY.length - 1)].name}
           </SystemLink>
           <SystemLink
             url={CONST_ROUTER.shop}

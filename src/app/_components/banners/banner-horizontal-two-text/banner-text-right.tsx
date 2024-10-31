@@ -25,7 +25,7 @@ export const BannerHorizontalTwoText = (
   props: BannerHorizontalTwoTextProps,
 ) => {
   return (
-    <div className={`container px-[12px]  ${props?.className ?? ''}`}>
+    <div className={props?.className ?? '' }>
       <div className="relative  overflow-hidden  rounded-radius-1 isolate">
         <div
           className={`text-right p-[40px_32px] lg:p-[80px_60px] ${

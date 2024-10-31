@@ -49,7 +49,7 @@ export const ProductSliderRows = (props: ProductSliderRowsProps) => {
                 <SwiperSlide key={`product-box-${index}`}>
                   <ProductItem
                     product={item}
-                    index={Math.min(index + 1, 6)}
+                    index={Math.min(index + 1, 10)}
                     className="min-h-full"
                     classNameImgWrap={`${
                       props?.classNameImgWrap ?? '!pt-[160px] sm:!pt-[200px]'

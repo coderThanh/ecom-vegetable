@@ -45,7 +45,7 @@ export const ProductSlider = (props: ProductSliderProps) => {
                 >
                   <ProductItem
                     product={item}
-                    index={Math.min(index + 1, 6)}
+                    index={Math.min(index + 1)}
                     className="min-h-full"
                   />
                 </SwiperSlide>

@@ -24,6 +24,7 @@ export default function Home() {
       <HomeDeal />
       <HomeBannerSaleOff />
       <HomeProductTab />
+      <HomeTwoBannerSaleOff />
 
       {/* ----- */}
       <div className="h-[3000px] bg-gray-100"></div>
@@ -81,7 +82,7 @@ export const HomeBannerSaleOff = () => {
       title="Fresh Fruits Healthy Products"
       btnLink={CONST_ROUTER.shop}
       btnText="Shop now"
-      className="mt-[30px] md:mt-[50px]"
+      className="mt-[30px] md:mt-[50px] container px-[12px]"
       classNameBoxText="max-w-[260px]  md:max-w-[500px]  ml-auto mr-[0px]"
       classNameImg="object-[70%_50%]"
     >
@@ -92,3 +93,45 @@ export const HomeBannerSaleOff = () => {
   )
 }
 
+export const HomeTwoBannerSaleOff = () => {
+  return (
+    <div className="mt-[30px] md:mt-[50px] container px-[12px] flex flex-wrap lg:flex-nowrap gap-[20px_20px]">
+      <BannerHorizontalTwoText
+        imgSrc={'/assets/home/banner-4.jpg'}
+        imgAlt={'img'}
+        titleSize={'small'}
+        title="Tasty Snack & Fastfood"
+        btnLink={CONST_ROUTER.shop}
+        btnText="Shop now"
+        className="flex-1 basis-full"
+        classNameBoxText="max-w-[160px] md:max-w-[220px]  ml-auto mr-[0px] !text-left !p-[24px_20px_24px_0px] lg:!p-[40px_20px_40px_0px]"
+        classNameImg="object-[80%_50%]"
+      >
+        <p className="mt-[5px]  mb-[0px] text-size-2 leading-[1.4] text-[rgb(var(--color-text-title),0.8)]">
+          The flavor of something special
+        </p>
+        <div className="absolute top-[14px] left-[14px] bg-[rgb(var(--bg-opposite),0.8)] text-bg text-size-small leading-[1] rounded-radius-small p-[6px_8px_5px]">
+          50% Off
+        </div>
+      </BannerHorizontalTwoText>
+      <BannerHorizontalTwoText
+        imgSrc={'/assets/home/banner-3.jpg'}
+        imgAlt={'img'}
+        titleSize={'small'}
+        title="Fresh Fruits & veggies"
+        btnLink={CONST_ROUTER.shop}
+        btnText="Shop now"
+        className="flex-1 basis-full"
+        classNameBoxText="max-w-[160px] md:max-w-[220px]  ml-auto mr-[0px] !text-left !p-[24px_20px_24px_0px] lg:!p-[40px_20px_40px_0px]"
+        classNameImg="object-[80%_50%]"
+      >
+        <p className="mt-[5px]  mb-[0px] text-size-2 leading-[1.4] text-[rgb(var(--color-text-title),0.8)]">
+          A healthy meal for every one
+        </p>
+        <div className="absolute top-[14px] left-[14px] bg-[rgb(var(--bg-opposite),0.8)] text-bg text-size-small leading-[1] rounded-radius-small p-[6px_8px_5px]">
+          70% Off
+        </div>
+      </BannerHorizontalTwoText>
+    </div>
+  )
+}
