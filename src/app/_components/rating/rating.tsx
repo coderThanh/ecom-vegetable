@@ -22,11 +22,13 @@ export const Rating = (props: RatingProps) => {
         .map((_, index) => (
           <div
             key={`rating-item-${index}`}
-            className={`text-[rgb(var(--bg-opposite),0.3)] ${
+            className={` ${
               isActive ? 'cursor-pointer hover:text-[#ffa249]' : ''
-            } ${index < props?.rating ? 'text-[#ffa249]' : ''} ${
-              props?.classNameStar ?? ''
-            }`}
+            } ${
+              index < props?.rating
+                ? 'text-[#ffa249]'
+                : 'text-[rgb(var(--bg-opposite),0.3)]'
+            } ${props?.classNameStar ?? ''}`}
           >
             <SvgStar
               width={props?.size ?? 12}

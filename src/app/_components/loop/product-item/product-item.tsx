@@ -14,6 +14,7 @@ type ProductItemProps = {
   product: Product
   index: number
   className?: string
+  classNameImgWrap?: string
 }
 export const ProductItem = (props: ProductItemProps) => {
   const { product } = props
@@ -30,7 +31,9 @@ export const ProductItem = (props: ProductItemProps) => {
       <div className="relative overflow-hidden">
         <SystemLink
           url={CONST_ROUTER.productDetail}
-          className="relative block w-full pt-[90%] sketch-loading transition-all duration-300 group-hover:scale-105 top-0 "
+          className={`relative block w-full pt-[90%] sketch-loading transition-all duration-300 group-hover:scale-105 ${
+            props?.classNameImgWrap ?? ''
+          }`}
         >
           <Image
             fill={true}
@@ -68,7 +71,7 @@ export const ProductItem = (props: ProductItemProps) => {
         </div>
       </div>
       {/* Box Text -- */}
-      <div className="border-t border-solid border-[rgb(var(--color-border),0.1)] p-[20px_14px] md:p-[20px] flex-1 flex flex-col justify-between">
+      <div className="border-t border-solid border-[rgb(var(--color-border),0.1)] p-[20px_12px] md:p-[20px] flex-1 flex flex-col justify-between">
         <div>
           <SystemLink
             url={CONST_ROUTER.shop}
@@ -78,18 +81,15 @@ export const ProductItem = (props: ProductItemProps) => {
           </SystemLink>
           <SystemLink
             url={CONST_ROUTER.shop}
-            className="line-clamp-3 text-[14px] md:text-[15px] duration-200 transition-colors leading-[1.5] hover:text-primary text-[rgb(var(--color-text-title))] font-semibold mb-[5px]"
+            className="line-clamp-2 text-[14px] md:text-[15px] duration-200 transition-colors leading-[1.5] hover:text-primary text-[rgb(var(--color-text-title))] font-semibold mb-[5px]"
           >
             {props.product.title}
           </SystemLink>
         </div>
         <div>
           {/* Rating --- */}
-          <div className="mt-[18px] mb-[14px]">
-            <Rating
-              rating={4}
-              classNameStar=""
-            />
+          <div className="mt-[12px] mb-[14px]">
+            <Rating rating={4} />
           </div>
           {/* Price --- */}
           <div className="flex gap-x-[20px] gap-y-[9px] flex-wrap items-start">

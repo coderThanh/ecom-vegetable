@@ -9,9 +9,18 @@ import SystemButton, {
 
 import Image from 'next/image'
 
-export const HomeHero = () => {
+export type SliderBannerTwoTextProps = {
+  className?: string
+  items: SliderBannerTwoTextItemProps[]
+}
+
+export const SliderBannerTwoText = (props: SliderBannerTwoTextProps) => {
   return (
-    <div className="container px-[12px] pt-[20px] md:pt-[30px]">
+    <div
+      className={`container px-[12px] pt-[20px] md:pt-[30px] ${
+        props?.className ?? ''
+      }`}
+    >
       <Swiper
         slidesPerView={1}
         autoHeight={true}
@@ -29,37 +38,32 @@ export const HomeHero = () => {
         }}
         className="swiper-dot-big"
       >
-        <SwiperSlide>
-          <HomeHeroBanner
-            sup="Starting at $ 29.99"
-            title="Organic & healthy vegetables"
-            btnText="Shop now "
-            btnURL="#"
-            imgSrc="/assets/home/home-hero-1.jpg"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <HomeHeroBanner
-            sup="Starting at $ 29.99"
-            title="Explore fresh & juicy fruits"
-            btnText="Shop now "
-            btnURL="#"
-            imgSrc="/assets/home/home-hero-2.jpg"
-          />
-        </SwiperSlide>
+        {props?.items?.map((item, index) => (
+          <SwiperSlide key={`slider-banner-tow-text-${index}`}>
+            <SliderBannerTwoTextItem
+              sup={item?.sup}
+              title={item?.title}
+              btnText={item?.btnText}
+              btnURL={item?.btnURL}
+              imgSrc={item?.imgSrc}
+            />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   )
 }
 
-type HomeHeroBannerProps = {
+type SliderBannerTwoTextItemProps = {
   sup?: string
   title?: string
   btnText?: string
   btnURL?: string
   imgSrc?: string
 }
-export const HomeHeroBanner = (props: HomeHeroBannerProps) => {
+export const SliderBannerTwoTextItem = (
+  props: SliderBannerTwoTextItemProps,
+) => {
   return (
     <div className="flex items-center w-full h-[300px] md:h-[420px] lg:h-[600px] sketch-loading rounded-radius-1 overflow-hidden isolate relative ps-[30px] pr-[20%] md:px-[60px]">
       <div className="lg:w-1/2">

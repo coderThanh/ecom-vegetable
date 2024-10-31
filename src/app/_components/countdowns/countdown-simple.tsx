@@ -4,10 +4,7 @@ import 'dayjs/locale/vi'
 
 import { useEffect, useState } from 'react'
 
-import { LOCALE } from '@/ultil/const'
-import dayjs from 'dayjs'
 import { dayjsUTCLocal } from '@/ultil/helper'
-import utc from 'dayjs/plugin/utc'
 
 type CountDownSimpleProps = {
   className?: string
@@ -26,6 +23,7 @@ export const CountDownSimple = (props: CountDownSimpleProps) => {
 
       setDate(new Date(0))
     }, 1000)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

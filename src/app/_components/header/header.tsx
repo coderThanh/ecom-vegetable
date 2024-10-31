@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { AsideMenu } from '@/app/_components/header/aside-menu'
 import { ButtonAsideMenu } from '@/app/_components/header/button-aside-menu'
 import { DATA_MENU_MAIN } from '@/ultil/data'

@@ -20,6 +20,7 @@ export const MenuTop = () => {
     if (isShowSub) {
       document.addEventListener('click', handleClosePopup)
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isShowSub])
 
   return (

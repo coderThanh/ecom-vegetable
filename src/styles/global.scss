@@ -92,6 +92,7 @@ p {
 
     &.swiper-dot-big {
         --swiper-pagination-bullet-horizontal-gap: 2px;
+
         .swiper-pagination-bullet {
             background-color: transparent;
             border: 1px solid var(--swiper-pagination-color);
@@ -107,6 +108,8 @@ p {
             }
         }
     }
+
+
 }
 
 
