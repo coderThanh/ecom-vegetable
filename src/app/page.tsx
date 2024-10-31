@@ -1,7 +1,11 @@
+import {
+  HomePolicy,
+  HomeProductTab,
+} from '@/app/_components/for-page/home/home-sections'
+
 import { BannerHorizontalTwoText } from '@/app/_components/banners/banner-horizontal-two-text/banner-text-right'
 import { CONST_ROUTER } from '@/ultil/router'
 import { CountDownSimple } from '@/app/_components/countdowns/countdown-simple'
-import { HomeProductTab } from '@/app/_components/for-page/home/home-tab-product'
 import { Metadata } from 'next'
 import { PAGE_DESCRIPTION } from '@/ultil/const'
 import { ProductCategory } from '@/app/_components/loop/product-category/product-category'
@@ -25,9 +29,9 @@ export default function Home() {
       <HomeBannerSaleOff />
       <HomeProductTab />
       <HomeTwoBannerSaleOff />
-
+      <HomePolicy />
       {/* ----- */}
-      <div className="h-[3000px] bg-gray-100"></div>
+      <div className="h-[3000px] bg-gray-100  mt-20"></div>
     </Wrapper>
   )
 }
