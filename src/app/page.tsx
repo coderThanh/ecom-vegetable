@@ -1,4 +1,5 @@
 import {
+  HomeGroupProducts,
   HomePolicy,
   HomeProductTab,
 } from '@/app/_components/for-page/home/home-sections'
@@ -30,8 +31,9 @@ export default function Home() {
       <HomeProductTab />
       <HomeTwoBannerSaleOff />
       <HomePolicy />
+      <HomeGroupProducts />
       {/* ----- */}
-      <div className="h-[3000px] bg-gray-100  mt-20"></div>
+      <div className="h-[3000px] bg-gray-100  mt-0"></div>
     </Wrapper>
   )
 }

@@ -11,6 +11,7 @@ import { ReactNode } from 'react'
 
 type BannerHorizontalTwoTextProps = {
   className?: string
+  classNameInner?: string
   classNameBoxText?: string
   classNameImg?: string
   children?: ReactNode
@@ -25,8 +26,8 @@ export const BannerHorizontalTwoText = (
   props: BannerHorizontalTwoTextProps,
 ) => {
   return (
-    <div className={props?.className ?? '' }>
-      <div className="relative  overflow-hidden  rounded-radius-1 isolate">
+    <div className={props?.className ?? ''}>
+      <div className={`relative  overflow-hidden  rounded-radius-1 isolate ${props?.classNameInner ?? ''}`}>
         <div
           className={`text-right p-[40px_32px] lg:p-[80px_60px] ${
             props?.classNameBoxText ?? ''

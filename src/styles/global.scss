@@ -56,6 +56,42 @@ p {
     line-height: 1.6;
 }
 
+h1 {
+    font-weight: bold;
+    line-height: 1.4;
+    font-size: var(--size-6);
+}
+
+h2 {
+    font-weight: bold;
+    line-height: 1.4;
+    font-size: var(--size-5);
+}
+
+h3 {
+    font-weight: bold;
+    line-height: 1.4;
+    font-size: var(--size-4);
+}
+
+h4 {
+    font-weight: bold;
+    line-height: 1.4;
+    font-size: var(--size-3);
+}
+
+h5 {
+    font-weight: bold;
+    line-height: 1.5;
+    font-size: var(--size-2);
+}
+
+h6 {
+    font-weight: 600;
+    line-height: 1.5;
+    font-size: 1.05rem;
+}
+
 .line-clamp-1 {
     overflow: hidden;
     text-overflow: ellipsis;
