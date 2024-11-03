@@ -6,8 +6,8 @@ import { DATA_PRODUCT_CATEGORY } from '@/ultil/data'
 import Image from 'next/image'
 import { Product } from '@/ultil/type'
 import { Rating } from '@/app/_components/rating/rating'
-import SvgBag from '@/app/_svg/bag'
-import SvgHeart from '@/app/_svg/heart'
+import SvgBag from '@/svg/bag'
+import SvgHeart from '@/svg/heart'
 import SystemLink from '@/app/_components/link'
 
 type ProductItemProps = {

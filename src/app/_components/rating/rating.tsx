@@ -1,6 +1,6 @@
 'use client'
 
-import SvgStar from '@/app/_svg/star'
+import SvgStar from '@/svg/star'
 import { useEffect } from 'react'
 
 type RatingProps = {
