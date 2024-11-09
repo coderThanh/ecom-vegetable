@@ -4,6 +4,7 @@ import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
 import { useEffect, useRef, useState } from 'react'
 
 import { BannerHorizontalTwoText } from '@/app/_components/banners/banner-horizontal-two-text/banner-text-right'
+import { BlogSlider } from '@/app/_components/loop/blog-slider/blog-slider'
 import { CONST_ROUTER } from '@/ultil/router'
 import { CountDownSimple } from '@/app/_components/countdowns/countdown-simple'
 import { DATA_PRODUCTS } from '@/ultil/data'
@@ -18,6 +19,7 @@ import SvgBoxReturn from '@/svg/box-return'
 import SvgPaymenChecked from '@/svg/payment-checked'
 import SvgShipping from '@/svg/shipping'
 import SvgSupport from '@/svg/support'
+import SystemLink from '@/app/_components/link'
 import { TitleSimple } from '@/app/_components/titles/title-simple'
 
 export const HomeDeal = () => {
@@ -366,6 +368,46 @@ export const HomeProductGroupItem = (props: HomeProductGroupItemProps) => {
           </SwiperSlide>
         ))}
       </Swiper>
+    </div>
+  )
+}
+
+type HomeBlogsProps = { className?: string }
+export const HomeBlogs = (props: HomeBlogsProps) => {
+  return (
+    <div className="container px-[12px] mt-[20px] md:mt-[40px]">
+      {/* title */}
+      <div className="flex items-end gap-x-[18px] gap-y-[12px] flex-wrap mb-[20px]">
+        <div className="flex-1 basis-full sm:basis-[unset]">
+          <TitleSimple
+            title={'Latest'}
+            titleHightlight=" Blog"
+            sup="We tackle interesting topics every day in 2023."
+          />
+        </div>
+        <div className="basis-[max-content]">
+          <SystemLink
+            url="#"
+            className="flex gap-[3px] items-center duration-200 transition-colors hover:text-primary cursor-pointer"
+          >
+            All Blogs{' '}
+            <span className="material-symbols-rounded text-[20px] !font-[400]">
+              keyboard_double_arrow_right
+            </span>
+          </SystemLink>
+        </div>
+      </div>
+      {/* --- Blogs ---- */}
+      <BlogSlider
+        isShowDate={true}
+        isShowReadMore={true}
+        colXl={5}
+        colLg={4}
+        colMd={2}
+        colSM={2}
+        spaceBetweenMd={24}
+        spaceBetweenSm={18}
+      />
     </div>
   )
 }

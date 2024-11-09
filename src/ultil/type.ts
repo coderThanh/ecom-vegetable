@@ -13,6 +13,13 @@ export type Product = {
   shortDescription?: string
 }
 
+export type Blog = {
+  id: string | number
+  title: string
+  shortDescription?: string
+  createdAt: string
+}
+
 export type ImageEntiy = {
   src: string
   alt?: string

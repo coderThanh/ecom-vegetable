@@ -1,5 +1,6 @@
 import {
   HomeBannerSaleOff,
+  HomeBlogs,
   HomeDeal,
   HomeGroupProducts,
   HomeHero,
@@ -29,8 +30,8 @@ export default function Home() {
       <HomeTwoBannerSaleOff />
       <HomePolicy />
       <HomeGroupProducts />
-      {/* ----- */}
-      <div className="h-[3000px] bg-gray-100  mt-0"></div>
+      <HomeBlogs />
+      <div className="pt-[40px]"></div>
     </Wrapper>
   )
 }
