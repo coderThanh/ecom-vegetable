@@ -14,7 +14,7 @@ type SocialsProps = {
 export const Socials = (props: SocialsProps) => {
 
   const classIconFilled =
-    'flex items-center justify-center bg-[rgb(var(--bg-opposite))] rounded-full transition-all duration-200 hover:bg-primary w-[34px] h-[34px] text-[rgb(var(--bg))]'
+    'flex items-center justify-center bg-[rgb(var(--bg-opposite))] rounded-radius-1 transition-all duration-200 hover:bg-primary w-[32px] h-[32px] text-[rgb(var(--bg))]'
 
   return (
     <div
@@ -29,8 +29,8 @@ export const Socials = (props: SocialsProps) => {
           target="_blank"
         >
           <SvgSocialFacebook
-            width={16}
-            height={16}
+            width={14}
+            height={14}
           />
         </Link>
       )}
@@ -41,8 +41,8 @@ export const Socials = (props: SocialsProps) => {
           target="_blank"
         >
           <SvgSocialX
-            width={16}
-            height={16}
+            width={14}
+            height={14}
           />
         </Link>
       )}
@@ -53,8 +53,8 @@ export const Socials = (props: SocialsProps) => {
           target="_blank"
         >
           <SvgSocialInstagram
-            width={18}
-            height={18}
+            width={16}
+            height={16}
           />
         </Link>
       )}
@@ -65,8 +65,8 @@ export const Socials = (props: SocialsProps) => {
           target="_blank"
         >
           <SvgSocialLinked
-            width={16}
-            height={16}
+            width={14}
+            height={14}
           />
         </Link>
       )}

@@ -15,8 +15,6 @@ export const BlogItem = (props: BlogItemProps) => {
   const { item, index, className, isShowDesc, isShowDate, isShowReadMore } =
     props || {}
 
-  console.log(item)
-
   return (
     <div className={`group ${className ?? ''}`}>
       {/* Imgae */}
@@ -34,11 +32,25 @@ export const BlogItem = (props: BlogItemProps) => {
       {/* Box Text */}
       <div className="p-[16px_0_10px] sm:p-[20px_0_10px]">
         {isShowDate && (
-          <p className='text-size-small text-[rgb(var(--color-text-title),0.8)] leading-[1.3] mb-[8px] flex gap-[0_5px]'>
-            <span className='block min-w-max'>June 30,2022</span><span>-</span><SystemLink url={CONST_ROUTER.blogs} className='inline line-clamp-1 flex-1 duration-200 transition-colors hover:text-primary'>Orgranic</SystemLink>
+          <p className="text-size-small text-[rgb(var(--color-text-title),0.8)] leading-[1.3] mb-[8px] flex gap-[0_5px]">
+            <span className="block min-w-max">June 30,2022</span>
+            <span>-</span>
+            <SystemLink
+              url={CONST_ROUTER.blogs}
+              className="inline line-clamp-1 flex-1 duration-200 transition-colors hover:text-primary"
+            >
+              Orgranic
+            </SystemLink>
           </p>
         )}
-        {item?.title && <SystemLink url={CONST_ROUTER.blogDetail} className='block line-clamp-2 text-size-2 mb-[14px] leading-[1.35] text-title font-semibold duration-200 transition-colors hover:text-primary'>{item?.title}</SystemLink>}
+        {item?.title && (
+          <SystemLink
+            url={CONST_ROUTER.blogDetail}
+            className="block line-clamp-2 text-size-2 mb-[14px] leading-[1.35] text-title font-semibold duration-200 transition-colors hover:text-primary"
+          >
+            {item?.title}
+          </SystemLink>
+        )}
         {item?.shortDescription && isShowDesc && (
           <p>{item?.shortDescription}</p>
         )}
