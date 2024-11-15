@@ -387,7 +387,7 @@ export const HomeBlogs = (props: HomeBlogsProps) => {
         </div>
         <div className="basis-[max-content]">
           <SystemLink
-            url="#"
+            url={CONST_ROUTER.blogs}
             className="flex gap-[3px] items-center duration-200 transition-colors hover:text-primary cursor-pointer"
           >
             All Blogs{' '}

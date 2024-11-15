@@ -298,7 +298,7 @@ export const DATA_BLOGS: Blog[] = [
   },
   {
     id: '63a24dbe-e651-4338-b7a3-d1fbf70d4b65',
-    title: 'Fantastic Soft Table street Quinn Tromp',
+    title: 'Fantastic Soft Table street Quinn Tromp Lorem Ipsum is simply dummy text of the printing',
     shortDescription:
       'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
     createdAt: 'Sun Nov 25 1984 14:27:30 GMT+0700 (Indochina Time)',

@@ -32,7 +32,7 @@ export const BlogItem = (props: BlogItemProps) => {
       {/* Box Text */}
       <div className="p-[16px_0_10px] sm:p-[20px_0_10px]">
         {isShowDate && (
-          <p className="text-size-small text-[rgb(var(--color-text-title),0.8)] leading-[1.3] mb-[8px] flex gap-[0_5px]">
+          <p className="text-size-small text-[rgb(var(--color-text-title),0.7)] leading-[1.3] mb-[8px] flex gap-[0_5px]">
             <span className="block min-w-max">June 30,2022</span>
             <span>-</span>
             <SystemLink
@@ -52,12 +52,12 @@ export const BlogItem = (props: BlogItemProps) => {
           </SystemLink>
         )}
         {item?.shortDescription && isShowDesc && (
-          <p>{item?.shortDescription}</p>
+          <p className='mb-[16px] text-[rgb(var(--color-text-title),0.7)] leading-[1.4]'>{item?.shortDescription}</p>
         )}
         {isShowReadMore && (
           <SystemLink
             url={CONST_ROUTER.blogDetail}
-            className="flex gap-[3px] items-center text-size-small duration-200 transition-colors hover:text-primary cursor-pointer"
+            className="flex gap-[3px] text-title items-center text-size-small duration-200 transition-colors hover:text-primary cursor-pointer"
           >
             Read More
             <span className="material-symbols-rounded text-[1.2em] !font-[400]">
