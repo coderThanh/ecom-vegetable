@@ -7,7 +7,7 @@ import { BannerHorizontalTwoText } from '@/app/_components/banners/banner-horizo
 import { BlogSlider } from '@/app/_components/loop/blog-slider/blog-slider'
 import { CONST_ROUTER } from '@/ultil/router'
 import { CountDownSimple } from '@/app/_components/countdowns/countdown-simple'
-import { DATA_PRODUCTS } from '@/ultil/data'
+import { DATA_PRODUCTS } from '@/data/demo-data'
 import { Grid } from 'swiper/modules'
 import { ProductItemVerticalSimple } from '@/app/_components/loop/product-item/product-item'
 import { ProductSlider } from '@/app/_components/loop/product-slider/product-slider'

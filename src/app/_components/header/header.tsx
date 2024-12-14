@@ -1,14 +1,16 @@
-/* eslint-disable react/no-unescaped-entities */
+'use client'
+
+import React, { useCallback, useEffect, useRef } from 'react'
+
 import { AsideMenu } from '@/app/_components/header/aside-menu'
 import { ButtonAsideMenu } from '@/app/_components/header/button-aside-menu'
-import { DATA_MENU_MAIN } from '@/ultil/data'
+import { DATA_MENU_MAIN } from '@/data/demo-data'
 import { HeaderCenterCTA } from '@/app/_components/header/center-cta'
 import { HeaderMenuVertical } from '@/app/_components/header/menu-vertical'
 import { HeaderSearch } from '@/app/_components/header/search'
 import Image from 'next/image'
 import Link from 'next/link'
 import { MenuTop } from '@/app/_components/header/menu-top'
-import React from 'react'
 import SvgArrowDown from '@/svg/arrow-down'
 import SvgArrowRight from '@/svg/arrow-right'
 import SvgPhone from '@/svg/phone'
@@ -17,27 +19,95 @@ import SystemLink from '@/app/_components/link'
 import styles from './header.module.scss'
 
 export const Header = () => {
+  const [headerHeight, setHeaderHeight] = React.useState<number | undefined>(
+    undefined,
+  )
+
+  const offsetToSticky = useRef<null | number>(null)
+
+  const [isSticky, setSticky] = React.useState(false)
+
+  const headerRef = useRef<HTMLDivElement>(null)
+
+  const handleHeaderHeight = useCallback(() => {
+    if (headerRef.current) {
+      setHeaderHeight(headerRef.current?.clientHeight)
+    }
+  }, [])
+
+  const handleStickyOffset = useCallback(() => {
+    const firstStikcy = headerRef.current?.querySelector('.is-sticky')
+
+    var offsetElement = firstStikcy?.getBoundingClientRect()
+
+    const scrollTop = window.scrollY || document.documentElement.scrollTop
+
+    if (offsetElement?.top != undefined) {
+      offsetToSticky.current = offsetElement?.top + scrollTop
+
+      return
+    }
+
+    offsetToSticky.current = null
+  }, [])
+
+  const handleOnScroll = useCallback(() => {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop
+
+    if (
+      offsetToSticky?.current != null &&
+      scrollTop >= offsetToSticky.current
+    ) {
+      setSticky(true)
+
+      return
+    }
+
+    setSticky(false)
+  }, [offsetToSticky.current])
+
+  useEffect(() => {
+    handleHeaderHeight()
+    handleStickyOffset()
+
+    window.addEventListener('resize', handleHeaderHeight)
+    window.addEventListener('resize', handleStickyOffset)
+    document.addEventListener('scroll', handleOnScroll)
+
+    return () => {
+      window.removeEventListener('resize', handleHeaderHeight)
+      window.removeEventListener('resize', handleStickyOffset)
+      document.removeEventListener('scroll', handleOnScroll)
+    }
+  }, [])
+
   return (
-    <header>
-      <HeaderTop />
-      <HeaderCenter />
-      <HeaderBottom />
-      <AsideMenu />
+    <header
+      className={`${isSticky ? styles.sticky : ''}`}
+      style={{ height: headerHeight }}
+    >
+      <div
+        ref={headerRef}
+        className={`${styles.headerInner} bg-[rgb(var(--bg))]`}
+      >
+        <HeaderTop className={styles.hiddenStikcy} />
+        <HeaderCenter className="is-sticky" />
+        <HeaderBottom className="is-stkicy" />
+        <AsideMenu />
+      </div>
     </header>
   )
 }
 
-/**
- * A component that renders the top part of the header. It includes a top
- * navigation bar with links to the contact page, the world's fastest online
- * shopping destination, and a menu with links to the help page, the track
- * order page, and the dropdown menu.
- *
- * @returns A component that renders the top part of the header.
- */
-const HeaderTop = () => {
+type HeaderTopProps = {
+  className?: string
+}
+
+const HeaderTop = (props: HeaderTopProps) => {
   return (
-    <div className={`bg-[rgb(var(--bg-2nd))] py-[10px]  `}>
+    <div
+      className={`bg-[rgb(var(--bg-2nd))] py-[10px]  ${props?.className ?? ''}`}
+    >
       <div
         className={`container text-size-small px-[12px] flex gap-x-[15px] text-[rgb(var(--color-text-sub))] items-center`}
       >
@@ -81,10 +151,17 @@ const HeaderTop = () => {
   )
 }
 
-const HeaderCenter = () => {
+type HeaderCenterpProps = {
+  className?: string
+}
+const HeaderCenter = (props: HeaderCenterpProps) => {
   return (
     <>
-      <div className="border-b border-solid border-[rgba(var(--color-border),0.1)]">
+      <div
+        className={`border-b border-solid border-[rgba(var(--color-border),0.1)] ${
+          props?.className ?? ''
+        }`}
+      >
         <div className="container px-[12px]">
           <div className="flex items-center py-[20px] md:py-[30px]">
             <Link
@@ -96,7 +173,7 @@ const HeaderCenter = () => {
                 alt={'logo'}
                 width={144}
                 height={39}
-                className='object-contain'
+                className="object-contain"
               />
             </Link>
             <div className="flex-1 lg:px-[40px] ps-[30px]">
@@ -112,9 +189,16 @@ const HeaderCenter = () => {
   )
 }
 
-const HeaderBottom = () => {
+type HeaderBottomProps = {
+  className?: string
+}
+const HeaderBottom = (props: HeaderBottomProps) => {
   return (
-    <div className=" border-b border-solid border-[rgba(var(--color-border),0.1)] py-[6px]  hidden lg:block">
+    <div
+      className={`border-b border-solid border-[rgba(var(--color-border),0.1)] py-[6px]  hidden lg:block ${
+        props?.className ?? ''
+      }`}
+    >
       <div className="container px-[12px]">
         <div className="flex items-center">
           <div>

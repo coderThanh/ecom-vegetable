@@ -3,7 +3,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import { BlogItem } from '@/app/_components/loop/blog-item/blog-item'
-import { DATA_BLOGS } from '@/ultil/data'
+import { DATA_BLOGS } from '@/data/demo-data'
 
 type BlogSliderProps = {
   className?: string

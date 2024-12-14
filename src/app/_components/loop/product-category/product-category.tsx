@@ -2,7 +2,7 @@
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-import { DATA_PRODUCT_CATEGORY } from '@/ultil/data'
+import { DATA_PRODUCT_CATEGORY } from '@/data/demo-data'
 import SvgDessert_1 from '@/svg/dessert-1'
 import SystemLink from '@/app/_components/link'
 

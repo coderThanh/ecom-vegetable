@@ -1,13 +1,12 @@
 import { TIME_OUT_API, TOKEN } from '@/ultil/const'
 import { getItemLocalStorage, removeItemLocalStorage } from '@/ultil/helper'
+
 import axios from 'axios'
 import { deleteCookie } from 'cookies-next'
 
 export const isServer = () => {
   return typeof window === 'undefined'
 }
-
-const context = {}
 
 export const restTransport = () => {
   const client = axios.create({
@@ -62,7 +61,7 @@ export const restTransport = () => {
     },
     (error) => {
       // Do something with request error
-      console.log('interceptors request error=============', error)
+      console.error('interceptors request error=============', error)
       // return Promise.reject(error)
     },
   )
@@ -84,7 +83,7 @@ export const restTransport = () => {
         message == 'Expired token' &&
         window != undefined
       ) {
-        console.log('error.response.data')
+        console.error('error.response.data')
         removeItemLocalStorage(TOKEN, {})
         deleteCookie(TOKEN)
       }

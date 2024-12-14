@@ -2,7 +2,7 @@
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-import { DATA_PRODUCTS } from '@/ultil/data'
+import { DATA_PRODUCTS } from '@/data/demo-data'
 import { Grid } from 'swiper/modules'
 import { ProductItem } from '@/app/_components/loop/product-item/product-item'
 

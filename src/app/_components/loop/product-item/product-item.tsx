@@ -1,8 +1,8 @@
-import { useProductAddToCard, useProductAddWishlist } from '@/hook/use-product'
+import { useProductAddToCard, useProductAddWishlist } from '@/application/use-product'
 
 import { CONST_ROUTER } from '@/ultil/router'
-import { ControllerProduct } from '@/ultil/controller/product'
-import { DATA_PRODUCT_CATEGORY } from '@/ultil/data'
+import { ControllerProduct } from '@/presentation/product'
+import { DATA_PRODUCT_CATEGORY } from '@/data/demo-data'
 import Image from 'next/image'
 import { Product } from '@/ultil/type'
 import { Rating } from '@/app/_components/rating/rating'

@@ -90,7 +90,7 @@ export const Pagination = ({
   }
 
   const classBtn =
-    'leading-[1] flex w-[34px] h-[34px] p-[5px] items-center justify-center bg-bg-2nd text-center rounded-radius-small duration-200 transition-all hover:bg-primary hover:text-bg text-title'
+    'leading-[1] flex min-w-[34px] h-[34px] p-[5px_8px] items-center justify-center bg-bg-2nd text-center rounded-radius-small duration-200 transition-all hover:bg-primary hover:text-bg text-title'
 
   return (
     <div
