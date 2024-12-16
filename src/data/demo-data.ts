@@ -8,125 +8,125 @@ export const DATA_MENU_MAIN: MenuItem[] = [
     text: 'Home',
     chilren: [
       {
-        url: '#',
+        url: CONST_ROUTER.shop,
         text: 'Mango Juice',
       },
       {
-        url: '#',
+        url: CONST_ROUTER.shop,
         text: 'Coconut Water',
       },
       {
-        url: '#',
+        url: CONST_ROUTER.shop,
         text: 'Tetra Pack',
       },
       {
-        url: '#',
+        url: CONST_ROUTER.shop,
         text: 'Apple Juices',
       },
       {
-        url: '#',
+        url: CONST_ROUTER.shop,
         text: 'Lychee Juice',
       },
     ],
   },
   {
-    url: '#',
+    url: CONST_ROUTER.shop,
     text: 'Categories',
     chilren: [
       {
-        url: '#',
+        url: CONST_ROUTER.shop,
         text: 'Mango Juice',
         chilren: [
           {
-            url: '#',
+            url: CONST_ROUTER.shop,
             text: 'Mango Juice',
           },
           {
-            url: '#',
+            url: CONST_ROUTER.shop,
             text: 'Coconut Water',
           },
           {
-            url: '#',
+            url: CONST_ROUTER.shop,
             text: 'Tetra Pack',
           },
           {
-            url: '#',
+            url: CONST_ROUTER.shop,
             text: 'Apple Juices',
           },
           {
-            url: '#',
+            url: CONST_ROUTER.shop,
             text: 'Lychee Juice',
           },
         ],
       },
       {
-        url: '#',
+        url: CONST_ROUTER.shop,
         text: 'Coconut Water',
         chilren: [
           {
-            url: '#',
+            url: CONST_ROUTER.shop,
             text: 'Mango Juice',
           },
           {
-            url: '#',
+            url: CONST_ROUTER.shop,
             text: 'Coconut Water',
           },
           {
-            url: '#',
+            url: CONST_ROUTER.shop,
             text: 'Tetra Pack',
           },
           {
-            url: '#',
+            url: CONST_ROUTER.shop,
             text: 'Apple Juices',
           },
           {
-            url: '#',
+            url: CONST_ROUTER.shop,
             text: 'Lychee Juice',
           },
         ],
       },
       {
-        url: '#',
+        url: CONST_ROUTER.shop,
         text: 'Tetra Pack',
         chilren: [
           {
-            url: '#',
+            url: CONST_ROUTER.shop,
             text: 'Mango Juice',
           },
           {
-            url: '#',
+            url: CONST_ROUTER.shop,
             text: 'Coconut Water',
           },
           {
-            url: '#',
+            url: CONST_ROUTER.shop,
             text: 'Tetra Pack',
           },
           {
-            url: '#',
+            url: CONST_ROUTER.shop,
             text: 'Apple Juices',
           },
           {
-            url: '#',
+            url: CONST_ROUTER.shop,
             text: 'Lychee Juice',
           },
         ],
       },
       {
-        url: '#',
+        url: CONST_ROUTER.shop,
         text: 'Apple Juices',
       },
       {
-        url: '#',
+        url: CONST_ROUTER.shop,
         text: 'Lychee Juice',
       },
     ],
   },
   {
-    url: '#',
+    url: CONST_ROUTER.shop,
     text: 'Products',
   },
   {
-    url: '#',
+    url: CONST_ROUTER.blogs,
     text: 'Blog',
   },
   {

@@ -13,7 +13,7 @@ export const Pagination = ({
   currentPage,
   className,
 }: PaginationProps) => {
-  const itemsOutput: { page?: number; name: String; url: string }[] = []
+  const itemsOutput: { page?: number; name: string; url: string }[] = []
 
   const maxItems = 10 // required maxItems % 2 == 0
 
@@ -26,8 +26,8 @@ export const Pagination = ({
       })
     }
   } else {
-    const itemsStart: { page?: number; name: String; url: string }[] = []
-    const itemsEnd: { page?: number; name: String; url: string }[] = []
+    const itemsStart: { page?: number; name: string; url: string }[] = []
+    const itemsEnd: { page?: number; name: string; url: string }[] = []
     const currentInStart: boolean = currentPage <= Math.round(totalPage / 2)
 
     switch (currentInStart) {

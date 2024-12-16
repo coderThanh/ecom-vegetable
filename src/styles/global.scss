@@ -27,7 +27,7 @@
 
     --field-h: 45px;
 
-    --sticky-t: 30px;
+    --sticky-t: 182px;
 
     --size-ratio: 1.15;
     --size-small: 14px;
@@ -120,6 +120,23 @@ h6 {
     line-clamp: 3;
     -webkit-box-orient: vertical;
 }
+
+// Scrollbar css
+.scrollbar::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+    background: rgb(var(--bg-opposite), 8%);
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+    background: rgb(var(--bg-opposite), 15%);
+    border-radius: 100px;
+}
+
+
 
 // Swiper
 .swiper {

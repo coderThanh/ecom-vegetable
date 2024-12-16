@@ -6,7 +6,7 @@ type BreadCrumbProps = {
   current: string
 }
 export const BreadCrumb = (props: BreadCrumbProps) => {
-  const classLink = ''
+  const classLink = 'duration-200 transition-colors hover:text-primary'
 
   return (
     <div className={`leading-[1.5] ${props?.className ?? ''}`}>
@@ -18,10 +18,16 @@ export const BreadCrumb = (props: BreadCrumbProps) => {
       </SystemLink>
       {props.items.map((item, index) => {
         return (
-          <>
-            <span key={index}> / </span>
-            <SystemLink key={index} url={item.url}>{item.title}</SystemLink>
-          </>
+          <span key={`Breakcrumb-${index}`}>
+            <span> / </span>
+            <SystemLink
+              key={index}
+              url={item.url}
+              className={classLink}
+            >
+              {item.title}
+            </SystemLink>
+          </span>
         )
       })}
       <span> / </span>
