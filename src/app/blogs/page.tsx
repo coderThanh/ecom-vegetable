@@ -12,7 +12,6 @@ import { HeaderSearch } from '@/app/_components/header/search'
 import { Pagination } from '@/app/_components/pagination/pagination'
 import SvgChecked from '@/svg/checked'
 import { Wrapper } from '@/app/_components/wrapper'
-import { div } from 'motion/react-client'
 import { useState } from 'react'
 
 export default function PageBlogs() {

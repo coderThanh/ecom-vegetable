@@ -17,26 +17,37 @@ type BlogSliderProps = {
   isShowDate?: boolean
   isShowReadMore?: boolean
 }
-export const BlogSlider = (props: BlogSliderProps) => {
+export const BlogSlider = ({
+  className,
+  spaceBetweenMd,
+  spaceBetweenSm,
+  colLg,
+  colMd,
+  colSM,
+  colXl,
+  isShowDate,
+  isShowDesc,
+  isShowReadMore,
+}: BlogSliderProps) => {
   return (
     <>
-      <div className={`${props?.className ?? ''}`}>
+      <div className={`${className ?? ''}`}>
         <Swiper
-          slidesPerView={props.colSM ?? 2}
+          slidesPerView={colSM ?? 2}
           autoHeight={false}
-          spaceBetween={props.spaceBetweenSm ?? 12}
+          spaceBetween={spaceBetweenSm ?? 12}
           breakpoints={{
             1280: {
-              slidesPerView: props.colXl ?? 5,
-              spaceBetween: props.spaceBetweenMd ?? 24,
+              slidesPerView: colXl ?? 5,
+              spaceBetween: spaceBetweenMd ?? 24,
             },
             1024: {
-              slidesPerView: props.colLg ?? 4,
-              spaceBetween: props.spaceBetweenMd ?? 24,
+              slidesPerView: colLg ?? 4,
+              spaceBetween: spaceBetweenMd ?? 24,
             },
             768: {
-              slidesPerView: props.colMd ?? 3,
-              spaceBetween: props.spaceBetweenMd ?? 24,
+              slidesPerView: colMd ?? 3,
+              spaceBetween: spaceBetweenMd ?? 24,
             },
           }}
         >
@@ -46,9 +57,9 @@ export const BlogSlider = (props: BlogSliderProps) => {
                   <BlogItem
                     item={item}
                     index={Math.min(index + 1, 6)}
-                    isShowDate={props.isShowDate}
-                    isShowDesc={props.isShowDesc}
-                    isShowReadMore={props.isShowReadMore}
+                    isShowDate={isShowDate}
+                    isShowDesc={isShowDesc}
+                    isShowReadMore={isShowReadMore}
                   />
                 </SwiperSlide>
               ))

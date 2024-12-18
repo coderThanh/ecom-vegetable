@@ -5,6 +5,6 @@ export const CONST_ROUTER = {
   cart: '/gio-hang',
   checkout: '/thanh-toan',
   wishlist: '/san-pham-yeu-thich',
-  blogDetail: '/bai-biet-chi-tiet',
+  blogDetail: '/bai-viet-chi-tiet',
   blogs: '/blogs',
 }
