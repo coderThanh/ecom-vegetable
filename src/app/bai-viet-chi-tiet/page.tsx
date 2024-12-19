@@ -2,23 +2,16 @@
 
 import 'dayjs/locale/vi'
 
-import {
-  DATA_BLOGS,
-  DATA_BLOG_DETAIL_CONTENT,
-  DATA_COMMENTS,
-} from '@/data/demo-data'
+import { DATA_BLOG_DETAIL_CONTENT, DATA_COMMENTS } from '@/data/demo-data'
+import HTMLReactParser, { Text } from 'html-react-parser/lib/index'
 
 import { BlogSlider } from '@/app/_components/loop/blog-slider/blog-slider'
 import { BreadCrumb } from '@/app/_components/breadcrumb/breadcrumb'
 import { CONST_ROUTER } from '@/ultil/router'
 import { CommentCard } from '@/app/_components/loop/comment-card/comment-card'
-import HTMLReactParser from 'html-react-parser/lib/index'
-import SystemImage from '@/app/_components/img'
+import SystemButton from '@/app/_components/button'
 import SystemLink from '@/app/_components/link'
 import { Wrapper } from '@/app/_components/wrapper'
-import classNames from 'classnames'
-import dayjs from 'dayjs'
-import { div } from 'motion/react-client'
 import { formatDate } from '@/ultil/helper'
 
 export default function PageBlogDetail() {
@@ -28,7 +21,7 @@ export default function PageBlogDetail() {
         <BreadCrumb
           items={[{ url: CONST_ROUTER.blogs, title: 'Organic' }]}
           current={'Bai viet chi tiet'}
-          className="m-[20px_0_20px]"
+          className="m-[10px_0_20px] md:m-[20px_0_20px]"
         />
         <BlogDetailHeader />
         <div className="enty-content">
@@ -37,6 +30,7 @@ export default function PageBlogDetail() {
         <BlogDetailRelated className="mt-[20px] lg:mt-[30px]" />
         <div className="h-[1px] bg-[rgb(var(--bg-opposite),0.1)] mt-[30px]"></div>
         <BlogDetailComment className="mt-[25px] lg:mt-[40px]" />
+        <BlogDetailFormComment className="mt-[40px] " />
       </div>
     </Wrapper>
   )
@@ -46,10 +40,10 @@ type BlogDetailHeaderProps = { className?: string }
 export const BlogDetailHeader = (props: BlogDetailHeaderProps) => {
   return (
     <div className={`${props?.className ?? ''}`}>
-      <h1 className="text-size-6 leading-[1.3]">
-        Marketing Guide: 5 Steps to Success
+      <h1 className="text-size-5 leading-[1.25]">
+        Marketing Guide: 5 Steps to Success marketing Guide
       </h1>
-      <div className="mt-[5px] text-size-small md:text-[1rem] leading-[1.5] mb-[20px]">
+      <div className="mt-[10px] text-size-small md:text-[1rem] leading-[1.5] mb-[20px]">
         <span>{'Ngày ' + formatDate(new Date().toDateString())}</span>
         <span> - </span>
         <SystemLink
@@ -121,5 +115,42 @@ export const BlogDetailSectionTitle = (props: BlogDetailSectionTitleProps) => {
     >
       {props.title}
     </h3>
+  )
+}
+
+type BlogDetailFormCommentProps = { className?: string }
+export const BlogDetailFormComment = (props: BlogDetailFormCommentProps) => {
+  return (
+    <div className={`${props?.className ?? ''}`}>
+      <h4 className="block bg-[rgb(var(--bg-opposite),0.04)] p-[12px_16px] text-[1rem] rounded-radius-1 mb-[18px] md:mb-[20px]">
+        Leave A Reply
+      </h4>
+      <div className="grid grid-cols-12 gap-[15px] md:gap-[22px]">
+        <div className="col-span-12 md:col-span-6">
+          <input
+            type="text"
+            className="field-input"
+            placeholder="Full Name"
+          />
+        </div>
+        <div className="col-span-12 md:col-span-6">
+          <input
+            type="email"
+            className="field-input"
+            placeholder="Email Address"
+          />
+        </div>
+        <div className="col-span-12">
+          <textarea
+            className="field-input field-textarea"
+            placeholder="Full Name"
+          />
+          <SystemButton
+            text="Submit"
+            className="mt-[20px] "
+          />
+        </div>
+      </div>
+    </div>
   )
 }

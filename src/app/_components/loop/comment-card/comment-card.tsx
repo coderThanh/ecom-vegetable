@@ -70,7 +70,7 @@ export const CommentCard = ({
             className="flex items-center gap-[12px] mt-[18px] mb-[5px] text-size-small transition-colors duration-200 hover:text-primary"
             onClick={() => setShowChildren(!isShowChildren)}
           >
-            <span className="inline-block h-[1px] w-[38px] bg-[rgb(var(--bg-opposite),0.2)]"></span>
+            <span className="inline-block h-[1px] w-[30px] bg-[rgb(var(--bg-opposite),0.2)]"></span>
             <span>{isShowChildren ? 'Hidden' : 'See more'}</span>
           </button>
         ) : null}

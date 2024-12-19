@@ -1,6 +1,10 @@
 'use client'
 
-import { HTMLAttributeAnchorTarget, MouseEventHandler, ReactElement } from 'react'
+import {
+  HTMLAttributeAnchorTarget,
+  MouseEventHandler,
+  ReactElement,
+} from 'react'
 
 import React from 'react'
 import SystemLink from '@/app/_components/link/index'
@@ -45,31 +49,42 @@ export type SystemButtonProps = {
 }
 
 // HTMLDivElement
-export default function SystemButton(props: SystemButtonProps) {
+export default function SystemButton({
+  kind,
+  color,
+  url,
+  target,
+  className,
+  text,
+  size,
+  isBlock,
+  children,
+  onClick,
+}: SystemButtonProps) {
   return (
     <>
       <SystemLink
         className={classNames(
           'btn',
-          props?.className,
+          className,
           styles.wrap,
-          styles[props.kind || 'default'],
-          styles[props.color || 'primary'],
-          styles[props.size || ''],
+          styles[kind || 'default'],
+          styles[color || 'primary'],
+          styles[size || ''],
         )}
-        url={props.url as any}
-        target={props?.target}
+        url={url as any}
+        target={target}
       >
         <div
           className={classNames('btn-inner', styles.inner, {
-            block: props.isBlock,
+            block: isBlock,
           })}
-          onClick={(event) => props.onClick && props.onClick(event)}
+          onClick={(event) => onClick && onClick(event)}
         >
-          {props.children}
-          {props.text && (
+          {children}
+          {text && (
             <span className={classNames(styles.textWrap, 'btn-title')}>
-              {props.text}
+              {text}
             </span>
           )}
         </div>

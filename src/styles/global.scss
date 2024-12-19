@@ -219,6 +219,14 @@ h6 {
     max-width: 100%;
     overflow: hidden;
 
+    &> :first-child {
+        margin-top: 0;
+    }
+
+    &>:last-child {
+        margin-bottom: 0;
+    }
+
     img,
     iframe {
         max-width: 100%;
@@ -243,7 +251,7 @@ h6 {
     }
 
     a {
-        text-decoration: underline 1px ;
+        text-decoration: underline 1px;
         text-underline-offset: 3px;
 
         &:hover {
@@ -287,6 +295,41 @@ h6 {
     }
 
 }
+
+.field-input {
+    height: var(--field-h);
+    font-size: 16px;
+    border: 1px solid rgb(var(--color-border), 0.1);
+    background-color: transparent;
+    color: rgb(var(--color-text-title));
+    padding: 10px 16px;
+    border-radius: var(--radius-1);
+    width: 100%;
+    transition: 240ms all;
+    outline: unset;
+
+    &::placeholder {
+        font-size: var(--size-small);
+    }
+
+    &:hover,
+    &:focus {
+        border-color: rgb(var(--color-border), 0.3);
+    }
+
+    &.error {
+        border-color: rgb(var(--color-alert));
+    }
+
+    &.field-textarea {
+        height: unset;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        min-height: 140px;
+    }
+}
+
+
 
 /* Responsive ---------------- */
 @media #{_bp.$max-w-sm} {
