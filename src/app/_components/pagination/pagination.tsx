@@ -7,15 +7,16 @@ type PaginationProps = {
   className?: string
   currentPage: number
   totalPage: number
+  maxItems?: number
 }
 export const Pagination = ({
   totalPage,
   currentPage,
   className,
+  maxItems = 10,
 }: PaginationProps) => {
   const itemsOutput: { page?: number; name: string; url: string }[] = []
 
-  const maxItems = 10 // required maxItems % 2 == 0
 
   if (totalPage <= maxItems) {
     for (let i = currentPage; i <= totalPage; i++) {

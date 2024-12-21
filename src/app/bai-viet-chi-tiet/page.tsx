@@ -96,7 +96,7 @@ export const BlogDetailComment = ({ className }: BlogDetailCommentProps) => {
               img={item.img}
               onReply={() => {}}
               className={index > 0 ? 'mt-[30px]' : ''}
-              children={item.children}
+              childrenItems={item.children}
             />
           )
         })}

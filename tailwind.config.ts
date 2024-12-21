@@ -42,11 +42,31 @@ const config: Config = {
       },
       animation: {
         fadeIn: 'fadeIn 1s',
+        fadeInFromBottom: 'fadeInFromBottom 300ms both',
+        fadeInFromLeft: 'fadeInFromLeft 300ms both',
+        fadeOutToBottom: 'fadeOutToBottom 300ms both',
+        fadeOutToLeft: 'fadeOutToLeft 300ms both',
       },
       keyframes: {
         fadeIn: {
           '0%': { opacity: '0' },
-          '100%': { transform: '1' },
+          '100%': { opacity: '1' },
+        },
+        fadeInFromBottom: {
+          '0%': { transform: 'translateY(100%)' },
+          '100%': { transform: 'translateY(0)' },
+        },
+        fadeOutToBottom: {
+          '0%': { transform: 'translateY(0%)' },
+          '100%': { transform: 'translateY(100%)' },
+        },
+        fadeInFromLeft: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
+        fadeOutToLeft: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-100%)' },
         },
       },
     },

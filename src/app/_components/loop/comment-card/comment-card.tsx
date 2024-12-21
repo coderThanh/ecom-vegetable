@@ -11,7 +11,7 @@ type CommentCardProps = {
   message: string
   img: string
   onReply: VoidFunction
-  children?: any[]
+  childrenItems?: any[]
 }
 
 export const CommentCard = ({
@@ -20,7 +20,7 @@ export const CommentCard = ({
   message,
   img,
   onReply,
-  children,
+  childrenItems,
 }: CommentCardProps) => {
   const [isShowChildren, setShowChildren] = useState(false)
 
@@ -51,9 +51,9 @@ export const CommentCard = ({
         </button>
 
         {/* children */}
-        {children && children.length > 0 ? (
+        {childrenItems && childrenItems.length > 0 ? (
           <div className={`mt-[20px] ${!isShowChildren ? 'hidden' : ''}`}>
-            {children.map((child, indexChild) => (
+            {childrenItems.map((child, indexChild) => (
               <CommentCard
                 key={`comment-child-${child.id + indexChild}`}
                 name={child.name}
@@ -65,7 +65,7 @@ export const CommentCard = ({
             ))}
           </div>
         ) : null}
-        {children && children.length > 0 ? (
+        {childrenItems && childrenItems.length > 0 ? (
           <button
             className="flex items-center gap-[12px] mt-[18px] mb-[5px] text-size-small transition-colors duration-200 hover:text-primary"
             onClick={() => setShowChildren(!isShowChildren)}
