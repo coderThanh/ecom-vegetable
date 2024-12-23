@@ -3,10 +3,8 @@
 import { DATA_PRODUCTS, DATA_PRODUCT_CATEGORY } from '@/data/demo-data'
 import { PopupContent, PopupContentType } from '@/app/_components/popup/popup'
 import { ReactNode, useCallback, useState } from 'react'
-import {
-  changePopupStatus,
-  updatePopupContent,
-} from '@/redux/feature/popup'
+import SystemButton, { SystemButtonColor } from '@/app/_components/button'
+import { changePopupStatus, updatePopupContent } from '@/redux/feature/popup'
 
 import { BreadCrumb } from '@/app/_components/breadcrumb/breadcrumb'
 import { Pagination } from '@/app/_components/pagination/pagination'
@@ -22,8 +20,8 @@ type ShopPageProps = { className?: string }
 export default function ShopPage(props: ShopPageProps) {
   return (
     <Wrapper>
-      <div className="container px-[12px] pb-[60px]">
-        <div className="flex flex-col  lg:flex-row lg:items-center gap-[14px_20px] mt-[15px] md:mt-[20px]">
+      <div className="container px-[12px] pb-[60px] md:pb-[80px]">
+        <div className="flex flex-col  lg:flex-row lg:items-center gap-[14px_20px] mt-[16px] md:mt-[20px]">
           <BreadCrumb
             items={[]}
             current={'Shop page'}
@@ -34,8 +32,8 @@ export default function ShopPage(props: ShopPageProps) {
         <ShopLoopMain className="mt-[24px]" />
         <Pagination
           currentPage={1}
-          totalPage={10}
-          maxItems={8}
+          totalPage={20}
+          maxItems={10}
           className="mt-[40px] md:mt-[50px]"
         />
       </div>
@@ -60,6 +58,7 @@ export const ShopFilterCTA = (props: ShopFilterCTAProps) => {
       >
         <div className="relative">
           <SvgFilter width={18} />
+          <div className="w-[8px] h-[8px] rounded-[100px] bg-[rgb(var(--color-alert))] absolute top-[0px] right-[0px]"></div>
         </div>
         <span>Lọc</span>
       </button>
@@ -78,13 +77,13 @@ export const ShopFilterCTA = (props: ShopFilterCTAProps) => {
 
 type ShopAsideProps = { className?: string }
 export const ShopAside = (props: ShopAsideProps) => {
+  const dispatch = useDispatch()
+
   var classItemNext =
     'mt-[16px] pt-[16px] border-solid border-t border-[rgb(var(--color-border),0.1)] '
 
   return (
-    <PopupContent
-      type={PopupContentType.leftBottomSheet}
-    >
+    <PopupContent type={PopupContentType.leftBottomSheet}>
       <div
         className={`${props?.className ?? ''} p-[34px_24px] md:p-[40px_40px]`}
       >
@@ -101,35 +100,49 @@ export const ShopAside = (props: ShopAsideProps) => {
           })}
         </ShopWidget>
         <ShopWidget
-          title="Category"
+          title="Weight"
           className={classItemNext}
         >
-          {DATA_PRODUCT_CATEGORY.map((item, index) => {
-            return (
-              <ShopWidgetCheckListItem
-                key={`widget-cate-product-${index}`}
-                name={item.name}
-                className={index > 0 ? 'mt-[16px]' : ''}
-                isChecked={false}
-              />
-            )
-          })}
+          {['500g Pack', '1kg pack', '2kg pack', '5kg pack', '10kg pack'].map(
+            (item, index) => {
+              return (
+                <ShopWidgetCheckListItem
+                  key={`widget-weeght-${index}`}
+                  name={item}
+                  className={index > 0 ? 'mt-[16px]' : ''}
+                  isChecked={false}
+                />
+              )
+            },
+          )}
         </ShopWidget>
         <ShopWidget
-          title="Category"
+          title="Price"
           className={classItemNext}
         >
-          {DATA_PRODUCT_CATEGORY.map((item, index) => {
+          {[
+            'Dưới 2 triệu',
+            'Từ 2 - 4 triệu',
+            'Từ 4 - 7 triệu',
+            'Từ 7 - 13 triệu',
+            'Trên 20 triệu',
+          ].map((item, index) => {
             return (
               <ShopWidgetCheckListItem
-                key={`widget-cate-product-${index}`}
-                name={item.name}
+                key={`widget-price-${index}`}
+                name={item}
                 className={index > 0 ? 'mt-[16px]' : ''}
                 isChecked={false}
               />
             )
           })}
         </ShopWidget>
+        <SystemButton
+          text="Xoá bộ lọc"
+          className="mt-[24px]"
+          color={SystemButtonColor.dark}
+          onClick={() => dispatch(changePopupStatus(false))}
+        />
       </div>
     </PopupContent>
   )

@@ -13,6 +13,7 @@ import SystemButton from '@/app/_components/button'
 import SystemLink from '@/app/_components/link'
 import { Wrapper } from '@/app/_components/wrapper'
 import { formatDate } from '@/ultil/helper'
+import { useCommentAddItem } from '@/application/use-comment'
 
 export default function PageBlogDetail() {
   return (
@@ -120,6 +121,8 @@ export const BlogDetailSectionTitle = (props: BlogDetailSectionTitleProps) => {
 
 type BlogDetailFormCommentProps = { className?: string }
 export const BlogDetailFormComment = (props: BlogDetailFormCommentProps) => {
+  const { handlePushComment } = useCommentAddItem()
+
   return (
     <div className={`${props?.className ?? ''}`}>
       <h4 className="block bg-[rgb(var(--bg-opposite),0.04)] p-[12px_16px] text-[1rem] rounded-radius-1 mb-[18px] md:mb-[20px]">
@@ -148,6 +151,7 @@ export const BlogDetailFormComment = (props: BlogDetailFormCommentProps) => {
           <SystemButton
             text="Submit"
             className="mt-[20px] "
+            onClick={handlePushComment}
           />
         </div>
       </div>
