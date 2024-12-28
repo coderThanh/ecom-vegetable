@@ -7,9 +7,9 @@ import {
 import { DATA_BLOGS, DATA_PRODUCT_CATEGORY } from '@/data/demo-data'
 
 import { BreadCrumb } from '@/app/_components/breadcrumb/breadcrumb'
-import { CONST_ROUTER } from '@/ultil/router'
 import { HeaderSearch } from '@/app/_components/header/search'
 import { Pagination } from '@/app/_components/pagination/pagination'
+import { ROUTERS } from '@/ultil/router'
 import SvgChecked from '@/svg/checked'
 import { Wrapper } from '@/app/_components/wrapper'
 import { useState } from 'react'
@@ -19,7 +19,7 @@ export default function PageBlogs() {
     <Wrapper>
       <div className="container p-[20px_14px_60px]">
         <BreadCrumb
-          items={[{ url: CONST_ROUTER.blogs, title: 'Category name' }]}
+          items={[{ url: ROUTERS.blogs, title: 'Category name' }]}
           current={'Blogs page'}
           className="m-[0_0_20px]"
         />

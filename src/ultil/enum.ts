@@ -1,0 +1,1 @@
+// Enum Global place below ------------

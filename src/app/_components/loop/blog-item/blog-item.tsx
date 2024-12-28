@@ -1,6 +1,6 @@
 import { Blog } from '@/ultil/type'
-import { CONST_ROUTER } from '@/ultil/router'
 import Image from 'next/image'
+import { ROUTERS } from '@/ultil/router'
 import SystemLink from '@/app/_components/link'
 
 type BlogItemProps = {
@@ -18,7 +18,7 @@ export const BlogItem = (props: BlogItemProps) => {
   return (
     <div className={`group ${className ?? ''}`}>
       {/* Imgae */}
-      <SystemLink url={CONST_ROUTER.blogDetail}>
+      <SystemLink url={ROUTERS.blogDetail}>
         <div className="pt-[var(--blog-img-ratio)] rounded-radius-1 overflow-hidden relative sketch-loading">
           <Image
             src={`/assets/blog/blog-${index}.jpg`}
@@ -36,7 +36,7 @@ export const BlogItem = (props: BlogItemProps) => {
             <span className="block min-w-max">June 30,2022</span>
             <span>-</span>
             <SystemLink
-              url={CONST_ROUTER.blogs}
+              url={ROUTERS.blogs}
               className="inline line-clamp-1 flex-1 duration-200 transition-colors hover:text-primary"
             >
               Orgranic
@@ -45,7 +45,7 @@ export const BlogItem = (props: BlogItemProps) => {
         )}
         {item?.title && (
           <SystemLink
-            url={CONST_ROUTER.blogDetail}
+            url={ROUTERS.blogDetail}
             className="block line-clamp-2 text-size-2 mb-[14px] leading-[1.35] text-title font-semibold duration-200 transition-colors hover:text-primary"
           >
             {item?.title}
@@ -58,7 +58,7 @@ export const BlogItem = (props: BlogItemProps) => {
         )}
         {isShowReadMore && (
           <SystemLink
-            url={CONST_ROUTER.blogDetail}
+            url={ROUTERS.blogDetail}
             className="flex gap-[3px] text-title items-center text-size-small duration-200 transition-colors hover:text-primary cursor-pointer "
           >
             Read More
@@ -93,7 +93,7 @@ export const BlogVerticalCard = ({
       } grid grid-cols-[100px_1fr] gap-[16px]`}
     >
       {/* Imgae */}
-      <SystemLink url={CONST_ROUTER.blogDetail}>
+      <SystemLink url={ROUTERS.blogDetail}>
         <div className="pt-[72%] rounded-radius-1 overflow-hidden relative sketch-loading">
           <Image
             src={`/assets/blog/blog-${index}.jpg`}
@@ -107,7 +107,7 @@ export const BlogVerticalCard = ({
       <div className="">
         {item?.title && (
           <SystemLink
-            url={CONST_ROUTER.blogDetail}
+            url={ROUTERS.blogDetail}
             className="block line-clamp-2  mb-[4px] leading-[1.35] text-title font-semibold duration-200 transition-colors hover:text-primary"
           >
             {item?.title}
@@ -120,7 +120,7 @@ export const BlogVerticalCard = ({
         )}
         {isShowCategory && (
           <SystemLink
-            url={CONST_ROUTER.blogs}
+            url={ROUTERS.blogs}
             className="inline-block w-fit mt-[10px] text-size-small line-clamp-1 flex-1 duration-200 transition-colors text-primary hover:opacity-70"
           >
             Orgranic

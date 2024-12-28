@@ -7,8 +7,8 @@ import HTMLReactParser, { Text } from 'html-react-parser/lib/index'
 
 import { BlogSlider } from '@/app/_components/loop/blog-slider/blog-slider'
 import { BreadCrumb } from '@/app/_components/breadcrumb/breadcrumb'
-import { CONST_ROUTER } from '@/ultil/router'
 import { CommentCard } from '@/app/_components/loop/comment-card/comment-card'
+import { ROUTERS } from '@/ultil/router'
 import SystemButton from '@/app/_components/button'
 import SystemLink from '@/app/_components/link'
 import { Wrapper } from '@/app/_components/wrapper'
@@ -20,7 +20,7 @@ export default function PageBlogDetail() {
     <Wrapper>
       <div className="container p-[20px_14px_60px]">
         <BreadCrumb
-          items={[{ url: CONST_ROUTER.blogs, title: 'Organic' }]}
+          items={[{ url: ROUTERS.blogs, title: 'Organic' }]}
           current={'Bai viet chi tiet'}
           className="m-[10px_0_20px] md:m-[20px_0_20px]"
         />
@@ -48,7 +48,7 @@ export const BlogDetailHeader = (props: BlogDetailHeaderProps) => {
         <span>{'Ngày ' + formatDate(new Date().toDateString())}</span>
         <span> - </span>
         <SystemLink
-          url={CONST_ROUTER.blogs}
+          url={ROUTERS.blogs}
           className="transition-colors duration-200 hover:text-primary"
         >
           Organic

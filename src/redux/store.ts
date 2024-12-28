@@ -1,10 +1,7 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import popupSlice, { updatePopupContent } from '@/redux/feature/popup'
 
-import asideSlice from '@/redux/feature/menu-aside'
-
 const rootReducers = combineReducers({
-  aside: asideSlice,
   popup: popupSlice,
 })
 

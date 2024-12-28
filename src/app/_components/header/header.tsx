@@ -1,9 +1,7 @@
 'use client'
 
-import React, { useCallback, useEffect, useRef } from 'react'
+import { AsideMenu, ButtonAsideMenu } from '@/app/_components/header/aside-menu'
 
-import { AsideMenu } from '@/app/_components/header/aside-menu'
-import { ButtonAsideMenu } from '@/app/_components/header/button-aside-menu'
 import { DATA_MENU_MAIN } from '@/data/demo-data'
 import { HeaderCenterCTA } from '@/app/_components/header/center-cta'
 import { HeaderMenuVertical } from '@/app/_components/header/menu-vertical'
@@ -11,75 +9,17 @@ import { HeaderSearch } from '@/app/_components/header/search'
 import Image from 'next/image'
 import Link from 'next/link'
 import { MenuTop } from '@/app/_components/header/menu-top'
+import React, {  } from 'react'
 import SvgArrowDown from '@/svg/arrow-down'
 import SvgArrowRight from '@/svg/arrow-right'
 import SvgPhone from '@/svg/phone'
 import SvgWhatsApp from '@/svg/whatsapp'
 import SystemLink from '@/app/_components/link'
 import styles from './header.module.scss'
+import { useHeaderSticky } from '@/presentation/header'
 
 export const Header = () => {
-  const [headerHeight, setHeaderHeight] = React.useState<number | undefined>(
-    undefined,
-  )
-
-  const offsetToSticky = useRef<null | number>(null)
-
-  const [isSticky, setSticky] = React.useState(false)
-
-  const headerRef = useRef<HTMLDivElement>(null)
-
-  const handleHeaderHeight = useCallback(() => {
-    if (headerRef.current) {
-      setHeaderHeight(headerRef.current?.clientHeight)
-    }
-  }, [])
-
-  const handleStickyOffset = useCallback(() => {
-    const firstStikcy = headerRef.current?.querySelector('.is-sticky')
-
-    var offsetElement = firstStikcy?.getBoundingClientRect()
-
-    const scrollTop = window.scrollY || document.documentElement.scrollTop
-
-    if (offsetElement?.top != undefined) {
-      offsetToSticky.current = offsetElement?.top + scrollTop
-
-      return
-    }
-
-    offsetToSticky.current = null
-  }, [])
-
-  const handleOnScroll = useCallback(() => {
-    const scrollTop = window.scrollY || document.documentElement.scrollTop
-
-    if (
-      offsetToSticky?.current != null &&
-      scrollTop >= offsetToSticky.current
-    ) {
-      setSticky(true)
-
-      return
-    }
-
-    setSticky(false)
-  }, [offsetToSticky.current])
-
-  useEffect(() => {
-    handleHeaderHeight()
-    handleStickyOffset()
-
-    window.addEventListener('resize', handleHeaderHeight)
-    window.addEventListener('resize', handleStickyOffset)
-    document.addEventListener('scroll', handleOnScroll)
-
-    return () => {
-      window.removeEventListener('resize', handleHeaderHeight)
-      window.removeEventListener('resize', handleStickyOffset)
-      document.removeEventListener('scroll', handleOnScroll)
-    }
-  }, [])
+  const { headerHeight, headerRef, isSticky } = useHeaderSticky()
 
   return (
     <header
@@ -93,7 +33,6 @@ export const Header = () => {
         <HeaderTop className={styles.hiddenStikcy} />
         <HeaderCenter className="is-sticky" />
         <HeaderBottom className="is-stkicy" />
-        <AsideMenu />
       </div>
     </header>
   )

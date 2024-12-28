@@ -1,4 +1,4 @@
-export const CONST_ROUTER = {
+export const ROUTERS = {
   home: '/',
   shop: '/cua-hang',
   productDetail: '/san-pham-chi-tiet',

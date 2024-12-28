@@ -1,6 +1,6 @@
 import { Blog, MenuItem, Product } from '@/ultil/type'
 
-import { CONST_ROUTER } from '@/ultil/router'
+import { ROUTERS } from '@/ultil/router'
 
 export const DATA_MENU_MAIN: MenuItem[] = [
   {
@@ -8,125 +8,125 @@ export const DATA_MENU_MAIN: MenuItem[] = [
     text: 'Home',
     chilren: [
       {
-        url: CONST_ROUTER.shop,
+        url: ROUTERS.shop,
         text: 'Mango Juice',
       },
       {
-        url: CONST_ROUTER.shop,
+        url: ROUTERS.shop,
         text: 'Coconut Water',
       },
       {
-        url: CONST_ROUTER.shop,
+        url: ROUTERS.shop,
         text: 'Tetra Pack',
       },
       {
-        url: CONST_ROUTER.shop,
+        url: ROUTERS.shop,
         text: 'Apple Juices',
       },
       {
-        url: CONST_ROUTER.shop,
+        url: ROUTERS.shop,
         text: 'Lychee Juice',
       },
     ],
   },
   {
-    url: CONST_ROUTER.shop,
+    url: ROUTERS.shop,
     text: 'Categories',
     chilren: [
       {
-        url: CONST_ROUTER.shop,
+        url: ROUTERS.shop,
         text: 'Mango Juice',
         chilren: [
           {
-            url: CONST_ROUTER.shop,
+            url: ROUTERS.shop,
             text: 'Mango Juice',
           },
           {
-            url: CONST_ROUTER.shop,
+            url: ROUTERS.shop,
             text: 'Coconut Water',
           },
           {
-            url: CONST_ROUTER.shop,
+            url: ROUTERS.shop,
             text: 'Tetra Pack',
           },
           {
-            url: CONST_ROUTER.shop,
+            url: ROUTERS.shop,
             text: 'Apple Juices',
           },
           {
-            url: CONST_ROUTER.shop,
+            url: ROUTERS.shop,
             text: 'Lychee Juice',
           },
         ],
       },
       {
-        url: CONST_ROUTER.shop,
+        url: ROUTERS.shop,
         text: 'Coconut Water',
         chilren: [
           {
-            url: CONST_ROUTER.shop,
+            url: ROUTERS.shop,
             text: 'Mango Juice',
           },
           {
-            url: CONST_ROUTER.shop,
+            url: ROUTERS.shop,
             text: 'Coconut Water',
           },
           {
-            url: CONST_ROUTER.shop,
+            url: ROUTERS.shop,
             text: 'Tetra Pack',
           },
           {
-            url: CONST_ROUTER.shop,
+            url: ROUTERS.shop,
             text: 'Apple Juices',
           },
           {
-            url: CONST_ROUTER.shop,
+            url: ROUTERS.shop,
             text: 'Lychee Juice',
           },
         ],
       },
       {
-        url: CONST_ROUTER.shop,
+        url: ROUTERS.shop,
         text: 'Tetra Pack',
         chilren: [
           {
-            url: CONST_ROUTER.shop,
+            url: ROUTERS.shop,
             text: 'Mango Juice',
           },
           {
-            url: CONST_ROUTER.shop,
+            url: ROUTERS.shop,
             text: 'Coconut Water',
           },
           {
-            url: CONST_ROUTER.shop,
+            url: ROUTERS.shop,
             text: 'Tetra Pack',
           },
           {
-            url: CONST_ROUTER.shop,
+            url: ROUTERS.shop,
             text: 'Apple Juices',
           },
           {
-            url: CONST_ROUTER.shop,
+            url: ROUTERS.shop,
             text: 'Lychee Juice',
           },
         ],
       },
       {
-        url: CONST_ROUTER.shop,
+        url: ROUTERS.shop,
         text: 'Apple Juices',
       },
       {
-        url: CONST_ROUTER.shop,
+        url: ROUTERS.shop,
         text: 'Lychee Juice',
       },
     ],
   },
   {
-    url: CONST_ROUTER.shop,
+    url: ROUTERS.shop,
     text: 'Products',
   },
   {
-    url: CONST_ROUTER.blogs,
+    url: ROUTERS.blogs,
     text: 'Blog',
   },
   {
@@ -139,15 +139,15 @@ export const DATA_MENU_MAIN: MenuItem[] = [
 ]
 
 export const DATA_PRODUCT_CATEGORY: { name: string; url: string }[] = [
-  { name: 'Eggs', url: CONST_ROUTER.shop },
-  { name: 'Fruits', url: CONST_ROUTER.shop },
-  { name: 'Bakery', url: CONST_ROUTER.shop },
-  { name: 'Vegetables', url: CONST_ROUTER.shop },
-  { name: 'Dairy & milk', url: CONST_ROUTER.shop },
-  { name: 'Snack & spice', url: CONST_ROUTER.shop },
-  { name: 'Juice & drinks', url: CONST_ROUTER.shop },
-  { name: 'Seafood', url: CONST_ROUTER.shop },
-  { name: 'Fast food', url: CONST_ROUTER.shop },
+  { name: 'Eggs', url: ROUTERS.shop },
+  { name: 'Fruits', url: ROUTERS.shop },
+  { name: 'Bakery', url: ROUTERS.shop },
+  { name: 'Vegetables', url: ROUTERS.shop },
+  { name: 'Dairy & milk', url: ROUTERS.shop },
+  { name: 'Snack & spice', url: ROUTERS.shop },
+  { name: 'Juice & drinks', url: ROUTERS.shop },
+  { name: 'Seafood', url: ROUTERS.shop },
+  { name: 'Fast food', url: ROUTERS.shop },
 ]
 
 export const DATA_PRODUCTS: Product[] = [

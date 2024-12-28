@@ -83,7 +83,7 @@ export const ShopAside = (props: ShopAsideProps) => {
     'mt-[16px] pt-[16px] border-solid border-t border-[rgb(var(--color-border),0.1)] '
 
   return (
-    <PopupContent type={PopupContentType.leftBottomSheet}>
+    <PopupContent type={PopupContentType.leftBottomSheet} isShowBtnClose={false} className='pointer-events-auto '>
       <div
         className={`${props?.className ?? ''} p-[34px_24px] md:p-[40px_40px]`}
       >

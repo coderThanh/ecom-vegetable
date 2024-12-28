@@ -1,4 +1,6 @@
-import { DATE_FORMAT_VI, LOCALE, TOKEN } from '@/ultil/const'
+import 'dayjs/locale/vi'
+
+import { DATE_FORMAT_VI, TOKEN } from '@/ultil/const'
 
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
@@ -343,8 +345,58 @@ export const parseAddressName = (
   return list.join(', ')
 }
 
-//
-export const dayjsUTCLocal = (time: Date, locale = LOCALE ) => {
+/**
+ * Formats a number in a shorter way. If the number is in billions, it will be formatted as e.g. 2.5b.
+ * If the number is in millions, it will be formatted as e.g. 2.5m. If the number is in thousands, it will
+ * be formatted as e.g. 2.5k. Otherwise, the number will be formatted with a comma separator.
+ *
+ * @param {number} num - The number to format.
+ * @return {string} The formatted string.
+ */
+export const coverNumberToSummary = (num: number) => {
+  if (num >= 1000000000) {
+    return (num / 1000000000).toFixed(1) + 'b'
+  } else if (num >= 1000000) {
+    return (num / 1000000).toFixed(1) + 'm'
+  } else if (num >= 1000) {
+    return (num / 1000).toFixed(1) + 'k'
+  }
+
+  return num.toLocaleString()
+}
+
+export const coverDateToCountFromToday = (day: Date) => {
   dayjs.extend(utc)
-  return dayjs(time).utc().locale(locale)
+
+  const diffTimestemp = Date.now() - day.getTime()
+
+  if (diffTimestemp <= 0) {
+    return dayjs(day).local().format(DATE_FORMAT_VI)
+  }
+
+  const dateCountFrom = dayjs(diffTimestemp).utc()
+
+  if (dateCountFrom.year() > 1970) {
+    return dayjs(day).local().format(DATE_FORMAT_VI)
+  }
+
+  if (dateCountFrom.month() >= 1) {
+    return `${dateCountFrom.month()} tháng`
+  }
+
+  if (dateCountFrom.date() > 1) {
+    return `${dateCountFrom.date() - 1} ngày`
+  }
+
+  if (dateCountFrom.hour() >= 1) {
+    return `${dateCountFrom.hour()} giờ`
+  }
+
+  if (dateCountFrom.minute() >= 1) {
+    return `${dateCountFrom.minute()} phút`
+  }
+
+  if (dateCountFrom.second() >= 1) {
+    return `${dateCountFrom.second()} giây`
+  }
 }

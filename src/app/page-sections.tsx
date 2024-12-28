@@ -5,13 +5,13 @@ import { useEffect, useRef, useState } from 'react'
 
 import { BannerHorizontalTwoText } from '@/app/_components/banners/banner-horizontal-two-text/banner-text-right'
 import { BlogSlider } from '@/app/_components/loop/blog-slider/blog-slider'
-import { CONST_ROUTER } from '@/ultil/router'
 import { CountDownSimple } from '@/app/_components/countdowns/countdown-simple'
 import { DATA_PRODUCTS } from '@/data/demo-data'
 import { Grid } from 'swiper/modules'
 import { ProductItemVerticalSimple } from '@/app/_components/loop/product-item/product-item'
 import { ProductSlider } from '@/app/_components/loop/product-slider/product-slider'
 import { ProductSliderRows } from '@/app/_components/loop/product-slider-rows/product-slider-rows'
+import { ROUTERS } from '@/ultil/router'
 import { SliderBannerTwoText } from '@/app/_components/banners/slider-banner-two-text/slider-banner-two-text'
 import SvgArrowLeft from '@/svg/arrow-left'
 import SvgArrowRight from '@/svg/arrow-right'
@@ -23,6 +23,15 @@ import SystemLink from '@/app/_components/link'
 import { TitleSimple } from '@/app/_components/titles/title-simple'
 
 export const HomeDeal = () => {
+  const [date, setDate] = useState<Date | undefined>(undefined)
+
+  useEffect(() => {
+    setInterval(() => {
+      setDate(new Date(Date.now() + 1000 * 60 * 60 * 24))
+    }, 1000)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   return (
     <div className="container px-[12px] mt-[20px] md:mt-[40px]">
       {/* title */}
@@ -35,7 +44,7 @@ export const HomeDeal = () => {
           />
         </div>
         <div className="basis-[max-content]">
-          <CountDownSimple time={new Date(Date.now() + 1000 * 60 * 60 * 34)} />
+          {date && <CountDownSimple time={date} />}
         </div>
       </div>
       <ProductSlider className="mt-[18px]" />
@@ -70,7 +79,7 @@ export const HomeBannerSaleOff = () => {
       imgAlt={'img'}
       titleSize={'big'}
       title="Fresh Fruits Healthy Products"
-      btnLink={CONST_ROUTER.shop}
+      btnLink={ROUTERS.shop}
       btnText="Shop now"
       className="mt-[30px] md:mt-[50px] container px-[12px]"
       classNameBoxText="max-w-[260px]  md:max-w-[500px]  ml-auto mr-[0px]"
@@ -91,7 +100,7 @@ export const HomeTwoBannerSaleOff = () => {
         imgAlt={'img'}
         titleSize={'small'}
         title="Tasty Snack & Fastfood"
-        btnLink={CONST_ROUTER.shop}
+        btnLink={ROUTERS.shop}
         btnText="Shop now"
         className="flex-1 basis-full"
         classNameBoxText="max-w-[160px] md:max-w-[220px]  ml-auto mr-[0px] !text-left !p-[24px_20px_24px_0px] lg:!p-[40px_20px_40px_0px]"
@@ -109,7 +118,7 @@ export const HomeTwoBannerSaleOff = () => {
         imgAlt={'img'}
         titleSize={'small'}
         title="Fresh Fruits & veggies"
-        btnLink={CONST_ROUTER.shop}
+        btnLink={ROUTERS.shop}
         btnText="Shop now"
         className="flex-1 basis-full"
         classNameBoxText="max-w-[160px] md:max-w-[220px]  ml-auto mr-[0px] !text-left !p-[24px_20px_24px_0px] lg:!p-[40px_20px_40px_0px]"
@@ -277,7 +286,7 @@ export const HomeGroupProducts = (props: HomeGroupProductsProps) => {
           imgAlt={'img titl'}
           titleSize={'small'}
           title="Our top most products check it now"
-          btnLink={CONST_ROUTER.shop}
+          btnLink={ROUTERS.shop}
           btnText="Shop now"
           className="h-[160px] lg:h-[340px] min-h-full sm:col-span-2 md:col-span-3 lg:col-span-1"
           classNameInner="min-h-full"
@@ -387,7 +396,7 @@ export const HomeBlogs = (props: HomeBlogsProps) => {
         </div>
         <div className="basis-[max-content]">
           <SystemLink
-            url={CONST_ROUTER.blogs}
+            url={ROUTERS.blogs}
             className="flex gap-[3px] items-center duration-200 transition-colors hover:text-primary cursor-pointer"
           >
             All Blogs{' '}

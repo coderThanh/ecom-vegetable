@@ -1,10 +1,10 @@
 import { useProductAddToCard, useProductAddWishlist } from '@/application/use-product'
 
-import { CONST_ROUTER } from '@/ultil/router'
 import { ControllerProduct } from '@/presentation/product'
 import { DATA_PRODUCT_CATEGORY } from '@/data/demo-data'
 import Image from 'next/image'
 import { Product } from '@/ultil/type'
+import { ROUTERS } from '@/ultil/router'
 import { Rating } from '@/app/_components/rating/rating'
 import SvgBag from '@/svg/bag'
 import SvgHeart from '@/svg/heart'
@@ -26,14 +26,14 @@ export const ProductItem = (props: ProductItemProps) => {
 
   return (
     <div
-      className={`group  rounded-radius-1 overflow-hidden border border-solid border-[rgb(var(--color-border),0.1)] flex flex-col ${
+      className={`group  rounded-radius-1 bg-bg overflow-hidden border border-solid border-[rgb(var(--color-border),0.1)] flex flex-col ${
         props?.className ?? ''
       }`}
     >
       {/* Box image -- */}
       <div className="relative overflow-hidden">
         <SystemLink
-          url={CONST_ROUTER.productDetail}
+          url={ROUTERS.productDetail}
           className={`relative block w-full pt-[90%] sketch-loading transition-all duration-300 group-hover:scale-105 ${
             props?.classNameImgWrap ?? ''
           }`}
@@ -77,7 +77,7 @@ export const ProductItem = (props: ProductItemProps) => {
       <div className="border-t border-solid border-[rgb(var(--color-border),0.1)] p-[20px_12px] md:p-[20px] flex-1 flex flex-col justify-between">
         <div>
           <SystemLink
-            url={CONST_ROUTER.shop}
+            url={ROUTERS.shop}
             className="line-clamp-1 duration-200 transition-colors hover:text-primary text-[rgb(var(--color-text-title),0.8)] text-size-small mb-[8px]"
           >
             {
@@ -87,7 +87,7 @@ export const ProductItem = (props: ProductItemProps) => {
             }
           </SystemLink>
           <SystemLink
-            url={CONST_ROUTER.shop}
+            url={ROUTERS.shop}
             className="line-clamp-2 text-[14px] md:text-[15px] duration-200 transition-colors leading-[1.5] hover:text-primary text-[rgb(var(--color-text-title))] font-semibold mb-[5px]"
           >
             {props.product.title}
@@ -100,13 +100,13 @@ export const ProductItem = (props: ProductItemProps) => {
           </div>
           {/* Price --- */}
           <div className="flex gap-x-[10px] gap-y-[10px] flex-wrap items-baseline">
-            <span className="font-bold text-primary1">
+            <span className="font-bold text-[rgb(var(--color-price))]">
               {isSale
                 ? ControllerProduct.getPriceLocalString(product?.priceSale ?? 0)
                 : ControllerProduct.getPriceLocalString(product?.price ?? 0)}
             </span>
             {isSale && (
-              <div className="flex gap-x-[12px] text-size-small text-[rgb(var(--color-text-title),0.7)]">
+              <div className="flex gap-x-[12px] text-size-small text-[rgb(var(--color-price-sale))]">
                 <span className="line-through ">
                   {ControllerProduct.getPriceLocalString(product?.price ?? 0)}
                 </span>
@@ -158,7 +158,7 @@ export const ProductItemVerticalSimple = (
       {/* Box image -- */}
       <div className="relative overflow-hidden w-[70px] h-[70px]">
         <SystemLink
-          url={CONST_ROUTER.productDetail}
+          url={ROUTERS.productDetail}
           className={`relative block  w-full h-full sketch-loading transition-all duration-300 group-hover:scale-105 ${
             props?.classNameImgWrap ?? ''
           }`}
@@ -176,7 +176,7 @@ export const ProductItemVerticalSimple = (
       <div className=" flex-1 flex flex-col gap-[10px] ">
         <div>
           <SystemLink
-            url={CONST_ROUTER.shop}
+            url={ROUTERS.shop}
             className="line-clamp-2 text-[14px] md:text-[14px] duration-200 transition-colors leading-[1.4] hover:text-primary text-[rgb(var(--color-text-title))] font-semibold"
           >
             {props.product.title}
@@ -185,13 +185,13 @@ export const ProductItemVerticalSimple = (
         <div className='flex items-center gap-[10px]'>
           {/* Price --- */}
           <div className="flex gap-[5px_12px] text-[14px] flex-wrap items-baseline flex-1">
-            <span className="font-bold text-primary1">
+            <span className="font-bold text-[rgb(var(--color-price))]">
               {isSale
                 ? ControllerProduct.getPriceLocalString(product?.priceSale ?? 0)
                 : ControllerProduct.getPriceLocalString(product?.price ?? 0)}
             </span>
             {isSale && (
-              <div className="flex gap-x-[12px] text-size-small text-[rgb(var(--color-text-title),0.7)]">
+              <div className="flex gap-x-[12px] text-size-small text-[rgb(var(--color-price-sale))]">
                 <span className="line-through ">
                   {ControllerProduct.getPriceLocalString(product?.price ?? 0)}
                 </span>

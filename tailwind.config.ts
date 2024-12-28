@@ -18,6 +18,7 @@ const config: Config = {
         success: 'rgb(var(--color-success))',
         process: 'rgb(var(--color-process))',
         warning: 'rgb(var(--color-warning))',
+        star: 'rgb(var(--color-star))',
         title: 'rgb(var(--color-text-title))',
         bg: 'rgb(var(--bg))',
         'bg-2nd': 'rgb(var(--bg-2nd))',
@@ -41,9 +42,11 @@ const config: Config = {
         'radius-3': 'var(--radius-3)',
       },
       animation: {
-        fadeIn: 'fadeIn 1s',
+        fadeIn: 'fadeIn 500ms',
+        fadeInPopup: 'fadeIn 300ms both',
         fadeInFromBottom: 'fadeInFromBottom 300ms both',
         fadeInFromLeft: 'fadeInFromLeft 300ms both',
+        fadeOut: 'fadeOut 300ms both',
         fadeOutToBottom: 'fadeOutToBottom 300ms both',
         fadeOutToLeft: 'fadeOutToLeft 300ms both',
       },
@@ -55,6 +58,10 @@ const config: Config = {
         fadeInFromBottom: {
           '0%': { transform: 'translateY(100%)' },
           '100%': { transform: 'translateY(0)' },
+        },
+        fadeOut: {
+          '0%': { opacity: '1' },
+          '100%': { opacity: '0' },
         },
         fadeOutToBottom: {
           '0%': { transform: 'translateY(0%)' },

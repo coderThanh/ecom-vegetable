@@ -41,6 +41,7 @@ export type SystemButtonProps = {
   url?: string
   target?: HTMLAttributeAnchorTarget
   className?: string
+  classText?: string
   text?: string
   size?: SystemButtonSize
   isBlock?: boolean
@@ -55,6 +56,7 @@ export default function SystemButton({
   url,
   target,
   className,
+  classText,
   text,
   size,
   isBlock,
@@ -83,7 +85,7 @@ export default function SystemButton({
         >
           {children}
           {text && (
-            <span className={classNames(styles.textWrap, 'btn-title')}>
+            <span className={classNames(styles.textWrap, 'btn-title', classText)}>
               {text}
             </span>
           )}

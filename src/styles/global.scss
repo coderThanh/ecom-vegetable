@@ -7,6 +7,7 @@
     --color-success: 74, 159, 83;
     --color-process: 63, 162, 246;
     --color-warning: 255, 175, 0;
+    --color-star: 255, 162, 73;
     --color-border: 33, 35, 34;
     --color-border-opposite: 255, 255, 255;
     --bg: 255, 255, 255;
@@ -14,6 +15,8 @@
     --bg-opposite: 75, 89, 102;
     --color-text-sub: 119, 119, 119;
     --color-text-title: 75, 89, 102;
+    --color-price: 75, 89, 102;
+    --color-price-sale: 154, 161, 167;
 
     --ff-material-outline: 'Material Symbols Outlined';
     --ff-material-round: 'Material Symbols Rounded';
@@ -135,6 +138,13 @@ h6 {
     border-radius: 100px;
 }
 
+// 
+
+.sticky {
+    position: sticky;
+    top: var(--sticky-t);
+}
+
 
 
 // Swiper
@@ -168,16 +178,7 @@ h6 {
 
 
 
-// Field
-.field-text-rest {
-    background-color: transparent;
-    font-size: 16px;
-    width: 100%;
 
-    &::placeholder {
-        font-size: 1rem;
-    }
-}
 
 // Loading
 .sketch-loading {
@@ -294,6 +295,17 @@ h6 {
         border-top: 1px solid rgb(var(--color-border), 0.1);
     }
 
+}
+
+// Field
+.field-text-reset {
+    background-color: transparent;
+    font-size: 16px;
+    width: 100%;
+
+    &::placeholder {
+        font-size: 1rem;
+    }
 }
 
 .field-input {
