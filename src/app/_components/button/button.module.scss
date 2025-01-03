@@ -70,6 +70,16 @@
             --btn-border-hover: unset;
         }
 
+        &.darkTransparent {
+            --btn-shadown-hover: unset;
+            --btn-text: rgb(var(--bg-opposite));
+            --btn-text-hover: rgb(var(--bg));
+            --btn-bg: rgb(var(--bg-opposite), 0.05);
+            --btn-bg-hover: rgb(var(--bg-opposite));
+            --btn-border: unset;
+            --btn-border-hover: unset;
+        }
+ 
         &.errorTransparent {
             --btn-shadown-hover: unset;
             --btn-text: rgb(var(--color-alert));

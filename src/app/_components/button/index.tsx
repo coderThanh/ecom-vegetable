@@ -8,7 +8,6 @@ import {
 
 import React from 'react'
 import SystemLink from '@/app/_components/link/index'
-import classNames from 'classnames'
 import styles from './button.module.scss'
 
 export enum SystemButtonKind {
@@ -42,6 +41,7 @@ export type SystemButtonProps = {
   target?: HTMLAttributeAnchorTarget
   className?: string
   classText?: string
+  classInner?: string
   text?: string
   size?: SystemButtonSize
   isBlock?: boolean
@@ -57,6 +57,7 @@ export default function SystemButton({
   target,
   className,
   classText,
+  classInner,
   text,
   size,
   isBlock,
@@ -66,26 +67,21 @@ export default function SystemButton({
   return (
     <>
       <SystemLink
-        className={classNames(
-          'btn',
-          className,
-          styles.wrap,
-          styles[kind || 'default'],
-          styles[color || 'primary'],
-          styles[size || ''],
-        )}
+        className={`btn ${className ?? ''} ${styles.wrap} ${
+          styles[kind || 'default']
+        } ${styles[color || 'primary']} ${styles[size || '']}`}
         url={url as any}
         target={target}
       >
         <div
-          className={classNames('btn-inner', styles.inner, {
-            block: isBlock,
-          })}
+          className={`btn-inner ${styles.inner} ${isBlock ? 'block' : ''} ${
+            classInner ?? ''
+          }`}
           onClick={(event) => onClick && onClick(event)}
         >
           {children}
           {text && (
-            <span className={classNames(styles.textWrap, 'btn-title', classText)}>
+            <span className={`${styles.textWrap} ${classText ?? ''} btn-title`}>
               {text}
             </span>
           )}

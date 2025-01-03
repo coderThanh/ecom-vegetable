@@ -13,7 +13,7 @@ const config: Config = {
       },
       colors: {
         primary: 'rgb(var(--color-primary))',
-        seconday: 'rgb(var(--color-seconday))',
+        secondary: 'rgb(var(--color-secondary))',
         alert: 'rgb(var(--color-alert))',
         success: 'rgb(var(--color-success))',
         process: 'rgb(var(--color-process))',

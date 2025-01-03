@@ -16,3 +16,12 @@ export const useProductAddWishlist = () => {
     handleAddWishlist,
   }
 }
+
+export const useProductRemoveWishlist = () => {
+  const handleRemoveWishlist = () =>
+    notifySuccess('Đã xoá khỏi danh sách yêu thích')
+
+  return {
+    handleRemoveWishlist,
+  }
+}

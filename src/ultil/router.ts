@@ -7,4 +7,5 @@ export const ROUTERS = {
   wishlist: '/san-pham-yeu-thich',
   blogDetail: '/bai-viet-chi-tiet',
   blogs: '/blogs',
+  login: '/login',
 }

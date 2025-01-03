@@ -1,5 +1,6 @@
 type TitleSimpleProps = {
   className?: string
+  classTitle?: string
   title: string
   titleHightlight?: string
   sup?: string
@@ -7,7 +8,11 @@ type TitleSimpleProps = {
 export const TitleSimple = (props: TitleSimpleProps) => {
   return (
     <div className={`${props?.className ?? ''}`}>
-      <h2 className="capitalize text-size-4 font-extrabold  leading-[1.4]">
+      <h2
+        className={`${
+          props?.classTitle ?? ''
+        } capitalize text-size-4 font-extrabold  leading-[1.4]`}
+      >
         {props.title}
         {props?.titleHightlight && (
           <span className="text-primary">{props?.titleHightlight}</span>
