@@ -44,7 +44,6 @@ export type SystemButtonProps = {
   classInner?: string
   text?: string
   size?: SystemButtonSize
-  isBlock?: boolean
   children?: ReactElement
   onClick?: MouseEventHandler<HTMLDivElement>
 }
@@ -60,7 +59,6 @@ export default function SystemButton({
   classInner,
   text,
   size,
-  isBlock,
   children,
   onClick,
 }: SystemButtonProps) {
@@ -74,9 +72,7 @@ export default function SystemButton({
         target={target}
       >
         <div
-          className={`btn-inner ${styles.inner} ${isBlock ? 'block' : ''} ${
-            classInner ?? ''
-          }`}
+          className={`btn-inner ${styles.inner}  ${classInner ?? ''}`}
           onClick={(event) => onClick && onClick(event)}
         >
           {children}

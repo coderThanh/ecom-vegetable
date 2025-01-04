@@ -130,12 +130,10 @@ export const DATA_MENU_MAIN: MenuItem[] = [
     text: 'Blog',
   },
   {
-    url: '#',
-    text: 'Others',
+    url: ROUTERS.blogDetail,
+    text: 'Blog detail',
   },
-  {
-    text: 'Contact Us',
-  },
+  { url: ROUTERS.checkout, text: 'Checkout' },
 ]
 
 export const DATA_PRODUCT_CATEGORY: { name: string; url: string }[] = [
