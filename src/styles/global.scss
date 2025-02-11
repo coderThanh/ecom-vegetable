@@ -4,7 +4,7 @@
     --color-primary: 61, 170, 129;
     --color-secondary: 29, 161, 242;
     --color-alert: 246, 87, 87;
-    --color-success: 74, 159, 83;
+    --color-success: 22, 196, 127;
     --color-process: 63, 162, 246;
     --color-warning: 255, 175, 0;
     --color-star: 255, 162, 73;
@@ -310,7 +310,11 @@ h6 {
 
 
 .field-label {
-    
+    font-size: 1rem;
+    color: rgb(var(--color-text-title));
+    margin-bottom: 8px;
+    display: block;
+    font-weight: 600;
 }
 
 .field-input {
@@ -324,6 +328,7 @@ h6 {
     width: 100%;
     transition: 240ms all;
     outline: unset;
+    line-height: 1.4;
 
     &::placeholder {
         font-size: var(--size-small);
@@ -342,6 +347,52 @@ h6 {
         padding-top: 16px;
         padding-bottom: 16px;
         min-height: 140px;
+    }
+}
+
+.field-checkbox {
+    display: flex;
+    align-items: start;
+    gap: 8px;
+    cursor: pointer;
+    line-height: 1.4;
+
+    [type=checkbox] {
+        display: none;
+    }
+
+    &:has([type=checkbox]:checked) {
+        .el-checkbox {
+            border-color: rgb(var(--color-process));
+            background-color: rgb(var(--color-process));
+
+            &::before {
+                opacity: 1;
+            }
+        }
+    }
+
+    .el-checkbox {
+        transition: 200ms all;
+        position: relative;
+        width: 17px;
+        height: 17px;
+        border: 1px solid rgb(var(--color-border), 0.5);
+        border-radius: 4px;
+
+        &::before {
+            content: '\e5ca';
+            font-family: var(--ff-material-outline);
+            color: rgb(var(--bg));
+            font-size: 18px;
+            line-height: 1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: 200ms all;
+            opacity: 0;
+        }
     }
 }
 

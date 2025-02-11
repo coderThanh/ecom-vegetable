@@ -1,7 +1,6 @@
 'use client'
 
-import { AsideMenu, ButtonAsideMenu } from '@/app/_components/header/aside-menu'
-
+import { ButtonAsideMenu } from '@/app/_components/header/aside-menu'
 import { DATA_MENU_MAIN } from '@/data/demo-data'
 import { HeaderCenterCTA } from '@/app/_components/header/center-cta'
 import { HeaderMenuVertical } from '@/app/_components/header/menu-vertical'
@@ -9,14 +8,14 @@ import { HeaderSearch } from '@/app/_components/header/search'
 import Image from 'next/image'
 import Link from 'next/link'
 import { MenuTop } from '@/app/_components/header/menu-top'
-import React, {  } from 'react'
+import React from 'react'
 import SvgArrowDown from '@/svg/arrow-down'
 import SvgArrowRight from '@/svg/arrow-right'
 import SvgPhone from '@/svg/phone'
 import SvgWhatsApp from '@/svg/whatsapp'
 import SystemLink from '@/app/_components/link'
 import styles from './header.module.scss'
-import { useHeaderSticky } from '@/presentation/header'
+import { useHeaderSticky } from '@/presentation/ctrl-header'
 
 export const Header = () => {
   const { headerHeight, headerRef, isSticky } = useHeaderSticky()

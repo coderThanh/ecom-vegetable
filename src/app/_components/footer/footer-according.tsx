@@ -45,7 +45,6 @@ export const FooterAccording = (props: FooterAccordingProps) => {
             height: isOpen ? '' : '0px',
             marginTop: isOpen ? '20px' : '0px',
           }}
-          layout
         >
           {props.children}
         </motion.div>

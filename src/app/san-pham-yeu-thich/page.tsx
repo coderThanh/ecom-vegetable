@@ -2,7 +2,7 @@
 
 import 'dayjs/locale/vi'
 
-import { ControllerProduct } from '@/presentation/product'
+import { ControllerProduct } from '@/presentation/ctrl-product'
 import { DATA_PRODUCTS } from '@/data/demo-data'
 import { ROUTERS } from '@/ultil/router'
 import SvgClose from '@/svg/close'

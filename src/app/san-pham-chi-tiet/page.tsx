@@ -29,8 +29,8 @@ import {
 } from '@/application/use-product'
 
 import { BreadCrumb } from '@/app/_components/breadcrumb/breadcrumb'
-import { ControllerProduct } from '@/presentation/product'
-import { FieldCount } from '@/app/_components/fields/field'
+import { ControllerProduct } from '@/presentation/ctrl-product'
+import { FieldQuantity } from '@/app/_components/fields/quantity'
 import HTMLReactParser from 'html-react-parser/lib/index'
 import Image from 'next/image'
 import { ImgsFullPopup } from '@/app/_components/popup/imgs-full'
@@ -241,7 +241,7 @@ export const ProductDetailInfo = (props: ProductDetailInfoProps) => {
 
         {/* Add to cart */}
         <div className="flex gap-[12px]">
-          <FieldCount
+          <FieldQuantity
             value={1}
             onChange={(value) => {}}
             className="h-[38px]"

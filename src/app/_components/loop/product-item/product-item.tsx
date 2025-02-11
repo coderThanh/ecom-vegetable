@@ -1,6 +1,6 @@
 import { useProductAddToCard, useProductAddWishlist } from '@/application/use-product'
 
-import { ControllerProduct } from '@/presentation/product'
+import { ControllerProduct } from '@/presentation/ctrl-product'
 import { DATA_PRODUCT_CATEGORY } from '@/data/demo-data'
 import Image from 'next/image'
 import { Product } from '@/ultil/type'

@@ -7,9 +7,9 @@ import SystemButton, {
   SystemButtonSize,
 } from '@/app/_components/button'
 
-import { ControllerProduct } from '@/presentation/product'
+import { ControllerProduct } from '@/presentation/ctrl-product'
 import { DATA_PRODUCTS } from '@/data/demo-data'
-import { FieldCount } from '@/app/_components/fields/field'
+import { FieldQuantity } from '@/app/_components/fields/quantity'
 import { ROUTERS } from '@/ultil/router'
 import SvgClose from '@/svg/close'
 import SystemImage from '@/app/_components/img'
@@ -95,7 +95,7 @@ export const CartTable = (props: CartTableProps) => {
                 {ControllerProduct.getPriceLocalString(item.price ?? 0)}
               </div>
               <div className={`${classItemValue} `}>
-                <FieldCount
+                <FieldQuantity
                   value={1}
                   onChange={function (value: number | string): void {}}
                   className="h-[32px] max-w-full w-full"
@@ -167,7 +167,7 @@ export const CartRow = (props: CartRowProps) => {
             <div className="flex items-center justify-between gap-[20px] mt-[12px] ">
               <span className="">Quantity:</span>
               <span className="">
-                <FieldCount
+                <FieldQuantity
                   value={1}
                   onChange={function (value: number | string): void {}}
                   className="h-[32px] max-w-full w-full"
@@ -259,7 +259,7 @@ export const CarSummary = (props: CarSummaryProps) => {
         </div>
         <div className="flex justify-between gap-[20px] items-baseline mt-[20px] border-t border-solid border-[rgb(var(--color-border),0.1)] pt-[20px]">
           <span className="text-size-2 leading-[1.4] font-[700]">Total</span>
-          <span className="font-[600] flex-1 text-right text-primary text-size-2 font-bold">
+          <span className="font-[600] flex-1 text-right text-primary text-size-2 ">
             {ControllerProduct.getPriceLocalString(1050000)}
           </span>
         </div>

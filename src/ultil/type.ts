@@ -25,3 +25,12 @@ export type ImageEntiy = {
   alt?: string
   title?: string
 }
+
+export type Option = {
+  value?: string
+  title: string
+}
+
+export type RestOptions = {
+  [key: string]: string | number | boolean | null | undefined
+}
