@@ -7,6 +7,7 @@ import SvgClose from '@/svg/close'
 import { changePopupStatus } from '@/redux/feature/popup'
 import { useCallback } from 'react'
 
+// to use Popup component you need use redux popup: changePopupStatus, change popupContent
 type PopupProps = { className?: string }
 export default function Popup(props: PopupProps) {
   const { isOpen, content } = useSelector((state: RootState) => state.popup)
@@ -79,7 +80,7 @@ export const PopupContent = ({
 
   switch (type) {
     case PopupContentType.leftBottomSheet:
-      classWrapDefault = `md:max-w-[500px] absolute bottom-0 rounded-[15px_15px_0px_0] md:rounded-[0px] ${
+      classWrapDefault = `md:max-w-[500px] absolute bottom-0 md:top-0 rounded-[15px_15px_0px_0] md:rounded-[0px] ${
         isOpen
           ? 'animate-fadeInFromBottom md:animate-fadeInFromLeft'
           : 'animate-fadeOutToBottom md:animate-fadeOutToLeft'
