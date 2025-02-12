@@ -1,6 +1,6 @@
 import { RestOptions } from '@/ultil/type'
 
-export const useServerGetList = (action: Function) => {
+export const useServerGetList = (action: any) => {
   const get = async (options?: RestOptions) => {
     try {
       let res = null
@@ -23,7 +23,7 @@ export const useServerGetList = (action: Function) => {
   return { get }
 }
 
-export const useServerGetDetailById = (action: Function) => {
+export const useServerGetDetailById = (action: any) => {
   const get = async (id: string, options?: RestOptions) => {
     try {
       const { data, errors, statusCode } = await action(id, options)

@@ -61,85 +61,14 @@ export const usePostAPI = (action: any, isAutoShowNotify: boolean = true) => {
     },
     [action, executeRecaptcha],
   )
-  return {
-    loading,
-    post,
-    error,
-    setError,
-  }
 }
 
 export const useGetDetailById = (
   action: any,
   isAutoShowNotify: boolean = false,
-) => {
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState(null)
+) => {}
 
-  const get = useCallback(
-    async (id: string, options?: RestOptions) => {
-      try {
-        setLoading(true)
-        setError(null)
-
-        const { data, errors, message, statusCode } = await action(id, options)
-
-        if (statusCode === 200) {
-          return data
-        }
-
-        if (isAutoShowNotify) {
-          notifyError(message?.content)
-        }
-
-        handleError(errors, setError)
-        return null
-      } catch (errorAPI: any) {
-        setError(errorAPI)
-        return null
-      } finally {
-        setLoading(false)
-      }
-    },
-    [action],
-  )
-
-  return { loading, get, error, setError }
-}
-
-export const useGetList = (action: any, isAutoShowNotify: boolean = false) => {
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState(null)
-
-  const get = useCallback(
-    async (options?: RestOptions) => {
-      // const startTime = new Date().getTime()
-      try {
-        setLoading(true)
-        setError(null)
-
-        let res = null
-        res = await action(options)
-
-        if (res?.data) {
-          return res.data
-        }
-
-        handleError(res?.data?.errors, setError)
-        return null
-      } catch (errorAPI: any) {
-        setError(errorAPI)
-        return null
-      } finally {
-        setLoading(false)
-
-        // _addLoadingTime(startTime, setLoading)
-      }
-    },
-    [action],
-  )
-  return { loading, get, error, setError }
-}
+export const useGetList = (action: any, isAutoShowNotify: boolean = false) => {}
 
 export const useSWRGetJSON = (
   action: any,
@@ -225,15 +154,9 @@ export const useDeleteAPIById = (
 ) => {
   const { executeRecaptcha } = useGoogleReCaptcha()
 
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState(null)
-
   const _delete = useCallback(
     async (id: string, param?: RestOptions) => {
       try {
-        setLoading(true)
-        setError(null)
-
         let gRecaptchaToken = undefined
 
         if (param?.isRecaptcha === true) {
@@ -246,41 +169,14 @@ export const useDeleteAPIById = (
         }
 
         delete param?.isRecaptcha
-
-        const { data, errors, message, statusCode } = await action({
-          ...param,
-          gRecaptchaToken,
-        })
-
-        if (statusCode === 200) {
-          if (isAutoShowNotify && message?.content) {
-            notifySuccess(message?.content)
-          }
-
-          return data
-        }
-
-        if (isAutoShowNotify) {
-          notifyError(message?.content)
-        }
-
-        handleError(errors, setError)
+        
         return null
       } catch (errorAPI: any) {
-        setError(errorAPI)
         return null
-      } finally {
-        setLoading(false)
       }
     },
     [action, executeRecaptcha],
   )
-  return {
-    loading,
-    _delete,
-    error,
-    setError,
-  }
 }
 
 const handleError = (errors: any, setError: any) => {
