@@ -3,7 +3,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 
 import { RootState } from '@/redux/store'
-import { ShopAside } from '@/app/cua-hang/page'
 import SvgClose from '@/svg/close'
 import { changePopupStatus } from '@/redux/feature/popup'
 import { useCallback } from 'react'
